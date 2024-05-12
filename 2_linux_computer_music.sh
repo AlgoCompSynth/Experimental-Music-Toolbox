@@ -34,19 +34,12 @@ echo "Installing other tools"
   audacity \
   chuck \
   faust \
-  ffmpeg \
-  ffmpeg-doc \
-  flac \
   fluidsynth \
   fluid-soundfont-gm \
   fluid-soundfont-gs \
   freepats \
   liblo-dev \
   liblo-tools \
-  libsoxr-dev \
-  libsox-dev \
-  libsox-fmt-all \
-  mp3splt \
   musescore-general-soundfont-lossless \
   musescore \
   polyphone \
@@ -55,7 +48,6 @@ echo "Installing other tools"
   sonic-pi-samples  \
   sonic-pi-server  \
   sonic-pi-server-doc \
-  sox \
   stk \
   stk-doc \
   swami \
