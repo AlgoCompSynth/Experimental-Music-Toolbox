@@ -11,10 +11,10 @@ source ./set_dbx_envars
 set | grep "^DBX"
 echo ""
 
-echo "Removing any existing $DBX_CONTAINER_NAME"
+echo "Removing any existing distrobox container $DBX_CONTAINER_NAME"
 distrobox rm --force $DBX_CONTAINER_NAME
 
-echo "Removing any existing $DBX_CONTAINER_DIRECTORY"
+echo "Removing any existing distrobox home directory $DBX_CONTAINER_DIRECTORY"
 rm -rf $DBX_CONTAINER_DIRECTORY
 
 echo "Pulling $DBX_CONTAINER_IMAGE"
