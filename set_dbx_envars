@@ -1,0 +1,8 @@
+
+# source this file!
+export DBX_CONTAINER_IMAGE="quay.io/toolbx-images/debian-toolbox:12"
+export DBX_CONTAINER_NAME="EMT-Bookworm-$COMPUTE_MODE"
+export DBX_CONTAINER_HOME_PREFIX="$HOME/dbx-homes"
+export DBX_CONTAINER_DIRECTORY="$DBX_CONTAINER_HOME_PREFIX/$DBX_CONTAINER_NAME"
+export DBX_CONTAINER_HOSTNAME="EMT-Bookworm-$COMPUTE_MODE"
+
