@@ -6,11 +6,15 @@ channels:
   - conda-forge
 dependencies:
   - python
+  - cudnn
+  - cutensor
+  - cupy
   - ffmpeg
   - jupyter_server
   - jupyterlab
   - matplotlib
   - micromamba
+  - nccl
   - numba
   - numpy
   - nvitop
@@ -19,7 +23,7 @@ dependencies:
   - pip:
     - jupyterlab-quarto
   - pytorch
-  - pytorch-cuda=12.1
+  - pytorch-cuda
   - scikit-learn
   - scipy
   - sympy

@@ -2,6 +2,10 @@
 
 set -e
 
+echo "Clearing Logs"
+rm -f Logs/*
+export LOGFILE=$PWD/Logs/mambaforge.log
+
 echo "Creating a new Mambaforge installation"
 
 pushd /tmp
@@ -21,7 +25,8 @@ then
   rm -fr $MAMBAFORGE_HOME
 fi
 echo "Installing Mambaforge to $MAMBAFORGE_HOME"
-./Mambaforge-Linux-$ARCH.sh -b -p $MAMBAFORGE_HOME
+./Mambaforge-Linux-$ARCH.sh -b -p $MAMBAFORGE_HOME \
+  >> $LOGFILE 2>&1
 
 echo ""
 echo "Enabling 'conda'"
@@ -34,7 +39,8 @@ echo "Setting default threads to number of processors"
 conda config --set default_threads `nproc`
 
 echo "Updating base packages"
-conda update --name base --all --yes --quiet
+conda update --name base --all --yes --quiet \
+  >> $LOGFILE 2>&1
 
 echo "Setting up bash command line"
 conda init bash
