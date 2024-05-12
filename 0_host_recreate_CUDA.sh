@@ -27,7 +27,8 @@ distrobox create \
   --hostname $DBX_CONTAINER_HOSTNAME \
   --pull \
   --home $DBX_CONTAINER_DIRECTORY \
-  --additional-packages "systemd libpam-systemd apt-file file git-lfs lsb-release pciutils plocate software-properties-common time tree vim-nox" \
+  --additional-packages "systemd libpam-systemd" \
+  --additional-packages "apt-file file git-lfs lsb-release pciutils plocate software-properties-common time tree vim-nox" \
   --additional-packages "fftw-dev fftw-docs libfftw3-bin libfftw3-dev libfftw3-doc libfftw3-mpi-dev libopenblas64-pthread-dev" \
   --init
   
