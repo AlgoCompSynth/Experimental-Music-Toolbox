@@ -20,6 +20,8 @@ read -p "Press 'Enter' to continue:"
 
 sudo apt-get install -qqy --no-install-recommends jackd2
 
+echo ""
+echo ""
 echo "Setting non-interactive mode"
 export DEBIAN_FRONTEND=noninteractive
 
