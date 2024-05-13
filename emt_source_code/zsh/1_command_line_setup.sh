@@ -4,7 +4,7 @@ set -e
 
 echo "Clearing Logs"
 rm -f Logs/*
-export LOGFILE=1command_line_setup.log
+export LOGFILE=1_command_line_setup.log
 
 echo "Installing Linux zsh packages"
 sudo apt-get update -qq
