@@ -18,6 +18,6 @@ echo "Installing Linux dependencies"
   > Logs/2_developer_packages.log 2>&1
 
 echo "Installing developer R packages - this takes some time"
-/usr/bin/time ./devel_packages.R >> Logs/2_developer_packages.log 2>&1
+/usr/bin/time ./developer_packages.R >> Logs/2_developer_packages.log 2>&1
 
 echo "Finished"
