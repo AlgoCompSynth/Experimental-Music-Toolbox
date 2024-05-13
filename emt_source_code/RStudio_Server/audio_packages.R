@@ -13,6 +13,7 @@ options(warn=2)
 already_installed <- rownames(installed.packages())
 required_packages <- c(
   "audio",
+  "fluidsynth",
   "fractional",
   "gm",
   "monitoR",
