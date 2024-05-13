@@ -7,7 +7,7 @@ export CHUCK_VERSION="chuck-1.5.2.4"
 
 echo "Clearing Logs"
 rm -f Logs/*
-export LOGFILE=$PWD/Logs/chuck.log
+export LOGFILE=$PWD/Logs/chuck_and_chugins.log
 
 echo "Installing build dependencies"
 sudo apt-get update -qq

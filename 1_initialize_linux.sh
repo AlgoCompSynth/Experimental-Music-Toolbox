@@ -12,7 +12,7 @@ echo "Creating $HOME/Projects directory"
 mkdir --parents $HOME/Projects
 
 echo "Copying utility scripts to $HOME"
-cp vimrc* edit-me-then-run-4-git-config.sh start_jupyter_lab_*.sh $HOME/
+cp vimrc* edit-me-then-run-4-git-config.sh $HOME/
 
 echo "Adding $USER to the 'audio' group"
 sudo usermod -aG audio $USER

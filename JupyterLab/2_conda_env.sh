@@ -2,26 +2,13 @@
 
 set -e
 
-export HOSTNAME=`hostname`
-echo "HOSTNAME: $HOSTNAME"
-
-if [[ "$HOSTNAME" =~ "CPU" ]]
-then
-  echo "..Setting COMPUTE_MODE to CPU"
-  export COMPUTE_MODE=CPU
-elif [[ "$HOSTNAME" =~ "CUDA" ]]
-then
-  echo "..Setting COMPUTE_MODE to CUDA"
-  export COMPUTE_MODE=CUDA
-else 
-  echo "Exit -1024: Cannot determine COMPUTE_MODE from hostname "$HOSTNAME""
-  exit -1024
-fi
-
+echo "Getting COMPUTE_MODE"
+source ../set_compute_mode.sh
 echo "COMPUTE_MODE: $COMPUTE_MODE"
 
 source $HOME/mambaforge/etc/profile.d/conda.sh
 
+echo ""
 echo "Creating new 'JupyterLab' virtual environment"
 /usr/bin/time conda env create --quiet --yes --file conda-env-$COMPUTE_MODE.yml \
   > Logs/2_conda$COMPUTE_MODE.log 2>&1
@@ -55,5 +42,8 @@ then
 else
   echo "R is not installed"
 fi
+
+echo "Copying start scripts to $HOME"
+cp start_jupyter_lab_*.sh $HOME/
 
 echo "Finished"
