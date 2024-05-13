@@ -2,16 +2,20 @@
 
 set -e
 
+export LOGFILE=Logs/2_conda_env.log
+rm -f $LOGFILE
+
 echo "Getting COMPUTE_MODE"
 source ../set_compute_mode.sh
 echo "COMPUTE_MODE: $COMPUTE_MODE"
 
+echo "Activating 'conda' commands"
 source $HOME/mambaforge/etc/profile.d/conda.sh
 
 echo ""
 echo "Creating new 'JupyterLab' virtual environment"
 /usr/bin/time conda env create --quiet --yes --file conda-env-$COMPUTE_MODE.yml \
-  > Logs/2_conda$COMPUTE_MODE.log 2>&1
+  >> $LOGFILE 2>&1
 
 echo "Activating 'JupyterLab' virtual environment"
 conda activate JupyterLab
@@ -30,15 +34,15 @@ then
   echo "R is installed"
   echo "Installing R package 'caracas'"
   /usr/bin/time Rscript -e "install.packages('caracas', quiet = TRUE)" \
-  >> Logs/2_conda$COMPUTE_MODE.log 2>&1
+  >> $LOGFILE 2>&1
 
   echo "Installing R package 'IRkernel'"
   /usr/bin/time Rscript -e "install.packages('IRkernel', quiet = TRUE)" \
-  >> Logs/2_conda$COMPUTE_MODE.log 2>&1
+  >> $LOGFILE 2>&1
 
   echo "Installing R kernel"
   Rscript -e "IRkernel::installspec()" \
-  >> Logs/2_conda$COMPUTE_MODE.log 2>&1
+  >> $LOGFILE 2>&1
 else
   echo "R is not installed"
 fi

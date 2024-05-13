@@ -4,7 +4,7 @@ set -e
 
 echo "Clearing Logs"
 rm -f Logs/*
-export LOGFILE=$PWD/Logs/mambaforge.log
+export LOGFILE=$PWD/Logs/1_install_mambaforge.log
 
 echo "Creating a new Mambaforge installation"
 
