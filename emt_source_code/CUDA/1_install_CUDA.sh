@@ -4,7 +4,7 @@ set -e
 
 echo "Clearing 'Logs'"
 rm -f Logs/*
-export LOGFILE=$PWD/Logs/CUDA.log
+export LOGFILE=$PWD/Logs/1_install_CUDA.log
 
 echo "Getting COMPUTE_MODE"
 source ../set_compute_mode.sh
@@ -38,16 +38,16 @@ then
   wget --quiet \
     https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-keyring_1.1-1_all.deb
 else
-  echo "Not WSL"
+  echo "WSL2 not detected"
   wget --quiet \
     https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
 fi
-  sudo dpkg -i cuda-keyring_1.1-1_all.deb \
+  /usr/bin/time sudo dpkg -i cuda-keyring_1.1-1_all.deb \
     >> $LOGFILE 2>&1
   sudo apt-get -qq update
-  sudo apt-get -qqy upgrade \
+  /usr/bin/time sudo apt-get -qqy upgrade \
     >> $LOGFILE 2>&1
-  sudo apt-get -y install \
+  /usr/bin/time sudo apt-get -y install \
     cuda-toolkit-12-4 \
     >> $LOGFILE 2>&1
 popd
