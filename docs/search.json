@@ -4,109 +4,20 @@
     "href": "index.html",
     "title": "The Experimental Music Toolbox",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "text": "Preface",
     "crumbs": [
       "Preface"
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
+    "objectID": "80_Pet_Containers_and_Distrobox.html",
+    "href": "80_Pet_Containers_and_Distrobox.html",
+    "title": "The Experimental Music Toolbox",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "Pet Containers and Distrobox",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
-    ]
-  },
-  {
-    "objectID": "10_Getting_Started.html",
-    "href": "10_Getting_Started.html",
-    "title": "2  Getting Started on Windows 11 WSL Ubuntu 22.04",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Getting Started on Windows 11 WSL Ubuntu 22.04</span>"
-    ]
-  },
-  {
-    "objectID": "20_Linux_Music_Packages.html",
-    "href": "20_Linux_Music_Packages.html",
-    "title": "3  Linux Music Packages",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Linux Music Packages</span>"
-    ]
-  },
-  {
-    "objectID": "30_RStudio_Server.html",
-    "href": "30_RStudio_Server.html",
-    "title": "4  RStudio Server",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>RStudio Server</span>"
-    ]
-  },
-  {
-    "objectID": "40_JupyterLab.html",
-    "href": "40_JupyterLab.html",
-    "title": "5  JupyterLab",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>JupyterLab</span>"
-    ]
-  },
-  {
-    "objectID": "50_PyTorch_and_Torchaudio.html",
-    "href": "50_PyTorch_and_Torchaudio.html",
-    "title": "6  PyTorch and Torchaudio",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>PyTorch and Torchaudio</span>"
-    ]
-  },
-  {
-    "objectID": "60_ChucK_from_Source.html",
-    "href": "60_ChucK_from_Source.html",
-    "title": "7  ChucK from Source",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>ChucK from Source</span>"
-    ]
-  },
-  {
-    "objectID": "70_Distrobox.html",
-    "href": "70_Distrobox.html",
-    "title": "8  Distrobox",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Distrobox</span>"
-    ]
-  },
-  {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "9  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Summary</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "References"
+      "Fedora Atomic Desktops and Distrobox",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>80_Pet_Containers_and_Distrobox.html</span>"
     ]
   }
 ]

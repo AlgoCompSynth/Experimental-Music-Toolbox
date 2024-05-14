@@ -8,14 +8,19 @@ book:
   date: "5/13/2024"
   chapters:
     - index.qmd
-    - intro.qmd
-    - 10_Getting_Started.qmd
-    - 20_Linux_Music_Packages.qmd
-    - 30_RStudio_Server.qmd
-    - 40_JupyterLab.qmd
-    - 50_PyTorch_and_Torchaudio.qmd
-    - 60_ChucK_from_Source.qmd
-    - 70_Distrobox.qmd
+    - 02_intro.qmd
+    - part: "Windows Subsystem for Linux"
+      chapters:
+        - 10_Getting_Started.qmd
+        - 20_Linux_Music_Packages.qmd
+        - 30_RStudio_Server.qmd
+        - 40_JupyterLab.qmd
+        - 50_PyTorch_and_Torchaudio.qmd
+        - 60_ChucK_from_Source.qmd
+    - part: "Fedora Atomic Desktops and Distrobox"
+      chapters:
+        - 70_Fedora_Atomic_Desktops.qmd
+        - 80_Pet_Containers_and_Distrobox.qmd
     - summary.qmd
     - references.qmd
 
@@ -28,4 +33,3 @@ format:
     documentclass: scrreprt
 
 editor: visual
-
