@@ -1,4 +1,4 @@
-# Introduction {.unnumbered}
+# The Experimental Music Toolbox (EMT)
 
 Welcome to the Experimental Music Toolbox! As the name suggests, the Experimental Music Toolbox (EMT) is a collection of tools for creating experimental music. But since it's based on open source Linux tools, it can help you make any kind of music.
 
