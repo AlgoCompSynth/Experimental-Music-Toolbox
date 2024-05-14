@@ -186,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Part 3: Distrobox Containers / Fedora Atomic Desktops</span></a>
+ <span class="menu-text">Part 3: Distrobox Containers, Fedora Atomic Desktops and Universal Blue Linux systems</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -202,6 +202,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./80_Fedora_Atomic_Desktops.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Fedora Atomic Desktops</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./82_Universal_Blue_Linux_Systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Universal Blue Linux Systems</span></span></a>
   </div>
 </li>
       </ul>
@@ -277,28 +283,28 @@ ul.task-list li input[type="checkbox"] {
 <p>Welcome to the Experimental Music Toolbox! As the name suggests, the Experimental Music Toolbox (EMT) is a collection of tools for creating experimental music. But since it’s based on open source Linux tools, it can help you make any kind of music.</p>
 <section id="who-is-emt-for" class="level2">
 <h2 class="anchored" data-anchor-id="who-is-emt-for">Who is EMT for?</h2>
-<p>The main audience for EMT is experienced coders who want to learn how to make music using a computer. However, its core is the Ubuntu 22.04 LTS Linux distribution, which means you can install any software from that distribution, as well as any software provided by third parties. If you wish, you can install a spreadsheet and do your taxes on it.</p>
+<p>The main audience for EMT is experienced coders who want to learn how to make music using a computer. However, its core is the <a href="https://www.releases.ubuntu.com/22.04/" title="Ubuntu 22.04 LTS download page">Ubuntu 22.04 LTS</a> Linux distribution, which means you can install any software from that distribution, as well as any software provided by third parties. If you wish, you can install a spreadsheet and do your taxes on it.</p>
 </section>
 <section id="whats-in-it" class="level2">
 <h2 class="anchored" data-anchor-id="whats-in-it">What’s in it?</h2>
-<p>EMT is a Git repository housing a collection of scripts. The scripts can install the following tools:</p>
+<p>EMT is a <a href="https://github.com/AlgoCompSynth/Experimental-Music-Toolbox" title="Experimenatal Music Toolbox GitHub repository">Git repository</a> housing a collection of scripts. The scripts can install the following tools:</p>
 <ul>
-<li><p>Linux music packages: the main packages in this group are classic, low-level music programming environments like Csound, Pure Data and Supercollider.</p></li>
+<li><p>Linux music packages: the main packages in this group are classic, low-level music programming environments like <a href="https://csound.com/" title="Csound home page">Csound</a>, <a href="https://pd.iem.sh/" title="Pd home page">Pd (Pure Data)</a> and <a href="https://supercollider.github.io/" title="SuperCollider home page">SuperCollider</a>.</p></li>
 <li><p>High-level programming language integrated development environments (IDEs):</p>
 <ul>
-<li>RStudio Server, with optional package development and audio analysis / synthesis tools. This is my primary tool set.</li>
-<li>JupyterLab, with PyTorch, torchaudio and the complete Python data science stack.</li>
+<li><a href="https://posit.co/download/rstudio-server/" title="RStudio Server download page">RStudio Server</a>, with optional package development and audio analysis / synthesis tools. This is my primary tool set.</li>
+<li><a href="https://jupyter.org/" title="Project Jupyter home page">JupyterLab</a>, with <a href="https://pytorch.org/" title="PyTorch home page">PyTorch</a>, <a href="https://pytorch.org/audio/stable/index.html" title="torchaudio documentation">torchaudio</a>and the complete Python data science stack.</li>
 </ul></li>
-<li><p>The ChucK live coding audio programming language, built from source: Although ChucK is included in the Ubuntu 22.04 LTS repositories and could be installed with the Linux music packages, the version there is quite old. ChucK received a significant upgrade to version 1.5 since Ubuntu 22.04 was released, so scripts to build ChucK from source are included.</p></li>
-<li><p>The NVIDIA CUDA Toolkit: If your system has an NVIDIA GPU, you can install the CUDA toolkit and program the GPU in C / C++.</p></li>
+<li><p>The <a href="https://chuck.cs.princeton.edu/" title="ChucK home page">ChucK</a>live coding audio programming language, built from source: Although ChucK is included in the Ubuntu 22.04 LTS repositories and could be installed with the Linux music packages, the version there is quite old. ChucK received a significant upgrade to version 1.5 since Ubuntu 22.04 was released, so scripts to build ChucK from source are included.</p></li>
+<li><p>The <a href="https://developer.nvidia.com/cuda-toolkit" title="CUDA Toolkit home page">NVIDIA CUDA Toolkit</a>: If your system has an NVIDIA GPU, you can install the CUDA toolkit and program the GPU in C / C++.</p></li>
 </ul>
 </section>
 <section id="what-hardware-do-i-need" class="level2">
 <h2 class="anchored" data-anchor-id="what-hardware-do-i-need">What hardware do I need?</h2>
 <p>EMT should run on any modern 64-bit PC (<code>amd64</code> / <code>X86_64</code>) capable of supporting Windows 11. There are three ways to run it:</p>
 <ol type="1">
-<li>On a Windows 11 machine using a Windows Subsystem for Linux installation of Ubuntu 22.04 LTS “Jammy Jellyfish”.</li>
-<li>As a Distrobox container inside any <code>amd64</code> / <code>X86_64</code> Linux system running Distrobox 1.7.1.0 or later.</li>
+<li>On a Windows 11 machine using a <a href="https://learn.microsoft.com/en-us/windows/wsl/" title="Windows Subsystem for Linux documentation">Windows Subsystem for Linux</a> installation of Ubuntu 22.04 LTS “Jammy Jellyfish”.</li>
+<li>As a <a href="https://distrobox.it/" title="Distrobox home page">Distrobox</a>container inside any <code>amd64</code> / <code>X86_64</code> Linux system running Distrobox 1.7.1.0 or later.</li>
 <li>On a Windows 11-capable machine running Ubuntu 22.04. Note that I do not own such a machine so I can’t verify that it works.</li>
 </ol>
 <p>The JupyterLab / PyTorch subsystem can be installed in either of two modes: CPU and CUDA. The CPU mode will work on any <code>amd64</code> / <code>X86_64</code> system, but the CUDA mode requires an NVIDIA 10 series GPU or newer. I test on a GTX 1650 and an RTX 3090. And the CUDA toolkit only works with an NVIDIA GPU.</p>
@@ -306,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="plan-of-the-book" class="level2">
 <h2 class="anchored" data-anchor-id="plan-of-the-book">Plan of the book</h2>
 <p>I’ll start with the easiest way to get started: a Windows 11PC with no GPU. That involves just installing Ubuntu 22.04 from the Microsoft Store. Part 1 will cover all the CPU mode tools in that environment.</p>
-<p>Part 2 will cover the tools that use an NVIDIA CPU: the CUDA toolkit and the GPU-enabled version of PyTorch. And Part 3 will cover Distrobox and Fedora Atomic Desktops.</p>
+<p>Part 2 will cover the tools that use an NVIDIA CPU: the CUDA toolkit and the GPU-enabled version of PyTorch. And Part 3 will cover Distrobox, <a href="https://fedoraproject.org/atomic-desktops/" title="Fedora Atomic Desktops home page">Fedora Atomic Desktops</a> and <a href="https://universal-blue.org/" title="Universal Blue home page">Universal Blue</a> Linux systems.</p>
 
 
 </section>

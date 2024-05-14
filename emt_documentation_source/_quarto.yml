@@ -20,10 +20,11 @@ book:
       chapters: 
         - 62_GPU-enabled_PyTorch.qmd
         - 64_CUDA_Toolkit.qmd
-    - part: "Part 3: Distrobox Containers / Fedora Atomic Desktops"
+    - part: "Part 3: Distrobox Containers, Fedora Atomic Desktops and Universal Blue Linux systems"
       chapters:
         - 70_Pet_Containers_and_Distrobox.qmd
         - 80_Fedora_Atomic_Desktops.qmd
+        - 82_Universal_Blue_Linux_Systems.qmd
     - summary.qmd
     - references.qmd
 
