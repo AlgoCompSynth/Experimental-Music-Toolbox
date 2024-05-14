@@ -28,4 +28,3 @@ dependencies:
   - scipy
   - sympy
   - torchaudio
-  - torchvision
