@@ -3,12 +3,19 @@ project:
   output-dir: ../docs
 
 book:
-  title: "emt_documentation_source"
-  author: "Norah Jones"
+  title: "The Experimental Music Toolbox"
+  author: "M. Edward (Ed) Borasky"
   date: "5/13/2024"
   chapters:
     - index.qmd
     - intro.qmd
+    - 10_Getting_Started.qmd
+    - 20_Linux_Music_Packages.qmd
+    - 30_RStudio_Server.qmd
+    - 40_JupyterLab.qmd
+    - 50_PyTorch_and_Torchaudio.qmd
+    - 60_ChucK_from_Source.qmd
+    - 70_Distrobox.qmd
     - summary.qmd
     - references.qmd
 
