@@ -40,6 +40,7 @@ sudo add-apt-repository --yes \
 
 echo ""
 echo "Installing R and gdebi-core"
+# https://posit.co/download/rstudio-server/
 sudo apt-get update -qq
 /usr/bin/time sudo apt-get upgrade -qqy \
   >> $LOGFILE 2>&1
@@ -97,5 +98,10 @@ echo "edit the file 'rserver.conf' and run"
 echo ""
 echo "    ./reconfigure_RStudio_Server.sh"
 echo ""
+echo ""See
+echo ""
+echo "    https://support.posit.co/hc/en-us/articles/200552316-Configuring-RStudio-Workbench-RStudio-Server"
+echo ""
+echo "for the details."
 
 echo "Finished!"
