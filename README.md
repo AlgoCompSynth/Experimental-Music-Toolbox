@@ -1,35 +1,38 @@
-README
-================
-2024-05-03
+# Introduction {.unnumbered}
 
-## Licensing, etc.
+Welcome to the Experimental Music Toolbox! As the name suggests, the Experimental Music Toolbox (EMT) is a collection of tools for creating experimental music. But since it's based on open source Linux tools, it can help you make any kind of music.
 
-The code is licensed MIT and the documentation is licensed CC0 (public
-domain). I no longer make and distribute binary artifacts of any kind;
-the additional effort level is just too much. I’ve licensed this very
-permissively so that others so inclined can publish binaries.
+## Who is EMT for?
 
-## Requirements
+The main audience for EMT is experienced coders who want to learn how to make music using a computer. However, its core is the [Ubuntu 22.04 LTS](https://www.releases.ubuntu.com/22.04/ "Ubuntu 22.04 LTS download page") Linux distribution, which means you can install any software from that distribution, as well as any software provided by third parties. If you wish, you can install a spreadsheet and do your taxes on it.
 
-You will need an `x86_64` aka `amd64` host machine with an NVIDIA GPU.
-You will need Distrobox 1.7.1.0 or newer and all of its dependencies. I
-develop on Bluefin DX NVIDIA “latest” (currently based on Fedora 40) but
-it will work with Silverblue 40 with the NVIDIA drivers installed, the
-equivalent Aurora distro, or any of the other Fedora 40 Atomic Desktops.
-It will probably work on the Fedora 39 equivalents but I don’t test on
-them any more.
+## What's in it?
 
-## The infamous home directory
+EMT is a [Git repository](https://github.com/AlgoCompSynth/Experimental-Music-Toolbox "Experimenatal Music Toolbox GitHub repository") housing a collection of scripts. The scripts can install the following tools:
 
-You will need to set aside a directory on your host machine for a
-`$HOME` directory for the container. Although Distrobox mounts your host
-home filesystem into the container, the software in this container may
-not have the same convetions for using hidden files as your host system
-or your other containers. As far as I know, there is no mechanism to
-detecto ver-writing!
+-   Linux music packages: the main packages in this group are classic, low-level music programming environments like [Csound](https://csound.com/ "Csound home page"), [Pd (Pure Data)](https://pd.iem.sh/ "Pd home page") and [SuperCollider](https://supercollider.github.io/ "SuperCollider home page").
 
-If you use your host home directory or another container’s home
-directory for this container, things may break and you won’t know who
-broke it, when or why. IMHO Distrobox needs to make independent
-container home directories the default, with a warning if you use an
-existing directory. I’ve built that into the scripts.
+-   High-level programming language integrated development environments (IDEs):
+
+    -   [RStudio Server](https://posit.co/download/rstudio-server/ "RStudio Server download page"), with optional package development and audio analysis / synthesis tools. This is my primary tool set.
+    -   [JupyterLab](https://jupyter.org/ "Project Jupyter home page"), with [PyTorch](https://pytorch.org/ "PyTorch home page"), [torchaudio](https://pytorch.org/audio/stable/index.html "torchaudio documentation")and the complete Python data science stack.
+
+-   The [ChucK](https://chuck.cs.princeton.edu/ "ChucK home page")live coding audio programming language, built from source: Although ChucK is included in the Ubuntu 22.04 LTS repositories and could be installed with the Linux music packages, the version there is quite old. ChucK received a significant upgrade to version 1.5 since Ubuntu 22.04 was released, so scripts to build ChucK from source are included.
+
+-   The [NVIDIA CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit "CUDA Toolkit home page"): If your system has an NVIDIA GPU, you can install the CUDA toolkit and program the GPU in C / C++.
+
+## What hardware do I need?
+
+EMT should run on any modern 64-bit PC (`amd64` / `X86_64`) capable of supporting Windows 11. There are three ways to run it:
+
+1.  On a Windows 11 machine using a [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/ "Windows Subsystem for Linux documentation") installation of Ubuntu 22.04 LTS "Jammy Jellyfish".
+2.  As a [Distrobox](https://distrobox.it/ "Distrobox home page")container inside any `amd64` / `X86_64` Linux system running Distrobox 1.7.1.0 or later.
+3.  On a Windows 11-capable machine running Ubuntu 22.04. Note that I do not own such a machine so I can't verify that it works.
+
+The JupyterLab / PyTorch subsystem can be installed in either of two modes: CPU and CUDA. The CPU mode will work on any `amd64` / `X86_64` system, but the CUDA mode requires an NVIDIA 10 series GPU or newer. I test on a GTX 1650 and an RTX 3090. And the CUDA toolkit only works with an NVIDIA GPU.
+
+## Plan of the book
+
+I'll start with the easiest way to get started: a Windows 11PC with no GPU. That involves just installing Ubuntu 22.04 from the Microsoft Store. Part 1 will cover all the CPU mode tools in that environment.
+
+Part 2 will cover the tools that use an NVIDIA CPU: the CUDA toolkit and the GPU-enabled version of PyTorch. And Part 3 will cover Distrobox, [Fedora Atomic Desktops](https://fedoraproject.org/atomic-desktops/ "Fedora Atomic Desktops home page") and [Universal Blue](https://universal-blue.org/ "Universal Blue home page") Linux systems.
