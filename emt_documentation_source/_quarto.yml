@@ -16,6 +16,7 @@ book:
         - 40_JupyterLab.qmd
         - 50_PyTorch_and_Torchaudio.qmd
         - 60_ChucK_from_Source.qmd
+        - 61_Docker_and_Distrobox_in_WSL.qmd
     - part: "Part 2: NVIDIA GPUs in CUDA Mode"
       chapters: 
         - 62_GPU-enabled_PyTorch.qmd
