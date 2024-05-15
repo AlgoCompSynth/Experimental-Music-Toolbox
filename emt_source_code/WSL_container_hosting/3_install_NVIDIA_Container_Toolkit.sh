@@ -41,4 +41,11 @@ echo "Installing NVIDIA Container Toolkit"
 /usr/bin/time sudo apt-get install -qqy nvidia-container-toolkit \
   >> $LOGFILE 2>&1
 
+echo "Configuring container runtime"
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
+
+echo "Testing"
+sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
+
 echo "Finished"
