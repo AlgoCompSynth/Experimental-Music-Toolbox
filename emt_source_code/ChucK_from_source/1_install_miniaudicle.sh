@@ -6,6 +6,7 @@ echo "Setting ChucK version"
 export CHUCK_VERSION="chuck-1.5.2.4"
 
 echo "Clearing Logs"
+mkdir --parents Logs
 rm -f Logs/*
 export LOGFILE=$PWD/Logs/1_install_miniaudicle.log
 
@@ -25,19 +26,21 @@ sudo apt-get update -qq
   libsndfile1-dev \
   >> $LOGFILE 2>&1
 
+echo ""
 echo "Defining 'qmake' with a symlink"
 ln -sf /usr/bin/qmake6 $HOME/.local/bin/qmake
+echo ""
 
-echo "Cloning repositories"
+echo "Cloning repository"
 rm -fr miniAudicle
 /usr/bin/time git clone --recurse-submodules --branch $CHUCK_VERSION \
   https://github.com/ccrma/miniAudicle.git
   >> $LOGFILE 2>&1
 
-echo "Building miniAudicle"
+echo "Building miniAudicle for pulseaudio"
 export QT_SELECT=qt6
 pushd miniAudicle/src
-/usr/bin/time make linux
+/usr/bin/time make linux-pulse
   >> $LOGFILE 2>&1
 echo "Installing miniAudicle"
 sudo make install
