@@ -35,6 +35,9 @@ echo "Installing multimedia-tasks"
 echo "...csound"
 /usr/bin/time sudo apt-get install -qqy multimedia-csound > Logs/csound.log 2>&1
 
+echo "...puredata"
+/usr/bin/time sudo apt-get install -qqy multimedia-puredata > Logs/puredata.log 2>&1
+
 echo "...supercollider"
 /usr/bin/time sudo apt-get install -qqy multimedia-supercollider > Logs/supercollider.log 2>&1
 
