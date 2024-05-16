@@ -53,7 +53,7 @@ echo "Installing other tools"
   liblo-dev \
   liblo-tools \
   musescore-general-soundfont-lossless \
-  musescore \
+  musescore3 \
   nyquist \
   polyphone \
   sf3convert \
