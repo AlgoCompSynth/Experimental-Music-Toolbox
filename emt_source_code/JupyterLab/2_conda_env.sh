@@ -23,10 +23,9 @@ conda activate JupyterLab
 echo "Listing virtual environment to JupyterLab-list.log"
 conda list > JupyterLab-list.log
 
-echo "Testing PyTorch, torchaudio and torchvision"
+echo "Testing PyTorch and torchaudio"
 python ./test-pytorch-$COMPUTE_MODE.py
 python ./test-torchaudio.py
-python ./test-torchvision.py
 
 echo "Testing for R installation"
 if [ -x /usr/bin/Rscript ]
