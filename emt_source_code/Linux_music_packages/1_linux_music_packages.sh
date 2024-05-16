@@ -54,6 +54,7 @@ echo "Installing other tools"
   liblo-tools \
   musescore-general-soundfont-lossless \
   musescore \
+  nyquist \
   polyphone \
   sf3convert \
   sonic-pi \
