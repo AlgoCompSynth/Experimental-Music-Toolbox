@@ -64,6 +64,7 @@ echo "Installing other tools"
   sonic-pi-server-doc \
   stk \
   stk-doc \
+  supercollider \
   swami \
   >> $LOGFILE 2>&1
 
