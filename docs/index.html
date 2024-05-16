@@ -22,6 +22,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+q { quotes: "“" "”" "‘" "’"; }
 </style>
 
 
@@ -158,6 +159,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">ChucK from Source</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./61_Docker_and_Distrobox_in_WSL.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Docker and Distrobox in WSL</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -172,13 +179,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./62_GPU-enabled_PyTorch.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GPU-enabled PyTorch</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./64_CUDA_Toolkit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">CUDA Toolkit</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">GPU-enabled PyTorch</span></span></a>
   </div>
 </li>
       </ul>
@@ -303,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="what-hardware-do-i-need">What hardware do I need?</h2>
 <p>EMT should run on any modern 64-bit PC (<code>amd64</code> / <code>X86_64</code>) capable of supporting Windows 11. There are three ways to run it:</p>
 <ol type="1">
-<li>On a Windows 11 machine using a <a href="https://learn.microsoft.com/en-us/windows/wsl/" title="Windows Subsystem for Linux documentation">Windows Subsystem for Linux</a> installation of Ubuntu 22.04 LTS “Jammy Jellyfish”.</li>
+<li>On a Windows 11 machine using a <a href="https://learn.microsoft.com/en-us/windows/wsl/" title="Windows Subsystem for Linux documentation">Windows Subsystem for Linux</a> installation of Ubuntu 22.04 LTS <q>Jammy Jellyfish</q>.</li>
 <li>As a <a href="https://distrobox.it/" title="Distrobox home page">Distrobox</a>container inside any <code>amd64</code> / <code>X86_64</code> Linux system running Distrobox 1.7.1.0 or later.</li>
 <li>On a Windows 11-capable machine running Ubuntu 22.04. Note that I do not own such a machine so I can’t verify that it works.</li>
 </ol>

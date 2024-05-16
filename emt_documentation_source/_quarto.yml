@@ -20,7 +20,6 @@ book:
     - part: "Part 2: NVIDIA GPUs in CUDA Mode"
       chapters: 
         - 62_GPU-enabled_PyTorch.qmd
-        - 64_CUDA_Toolkit.qmd
     - part: "Part 3: Distrobox Containers, Fedora Atomic Desktops and Universal Blue Linux systems"
       chapters:
         - 70_Pet_Containers_and_Distrobox.qmd
