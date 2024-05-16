@@ -46,6 +46,7 @@ echo "Installing other tools"
 /usr/bin/time sudo apt-get install -qqy --no-install-recommends \
   audacity \
   faust \
+  faustworks \
   fluidsynth \
   fluid-soundfont-gm \
   fluid-soundfont-gs \
