@@ -2,6 +2,13 @@
 
 set -e
 
+if ! [[ `uname --kernel-release` =~ "WSL2" ]]
+then
+  echo "WSL2 not detected"
+  echo "..exit -1024: container hosting is only supported on WSL2"
+  exit -1024
+fi
+
 export LOGFILE=$PWD/Logs/2_install_Distrobox.log
 export REPOSITORIES=$HOME/.local/repositories
 export DISTROBOX_VERSION="1.7.2.1"

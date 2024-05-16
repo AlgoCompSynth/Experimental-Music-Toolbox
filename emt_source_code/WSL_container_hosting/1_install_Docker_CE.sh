@@ -2,6 +2,13 @@
 
 set -e
 
+if ! [[ `uname --kernel-release` =~ "WSL2" ]]
+then
+  echo "WSL2 not detected"
+  echo "..exit -1024: container hosting is only supported on WSL2"
+  exit -1024
+fi
+
 echo "Clearing 'Logs'"
 rm -f Logs/*
 export LOGFILE=$PWD/Logs/1_install_Docker_CE.log

@@ -2,6 +2,13 @@
 
 set -e
 
+if ! [[ `uname --kernel-release` =~ "WSL2" ]]
+then
+  echo "WSL2 not detected"
+  echo "..exit -1024: container hosting is only supported on WSL2"
+  exit -1024
+fi
+
 export LOGFILE=$PWD/Logs/3_install_NVIDIA_Container_Toolkit.log
 
 echo "Getting COMPUTE_MODE"
