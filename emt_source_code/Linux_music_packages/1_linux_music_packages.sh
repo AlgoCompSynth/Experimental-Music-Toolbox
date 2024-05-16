@@ -32,6 +32,9 @@ echo "Installing multimedia-tasks"
   multimedia-tasks \
   >> $LOGFILE 2>&1
 
+echo "...ambisonics"
+/usr/bin/time sudo apt-get install -qqy multimedia-ambisonics > Logs/ambisonics.log 2>&1
+
 echo "...csound"
 /usr/bin/time sudo apt-get install -qqy multimedia-csound > Logs/csound.log 2>&1
 
