@@ -47,15 +47,23 @@ echo "...supercollider"
 echo ""
 echo "Installing other tools"
 /usr/bin/time sudo apt-get install -qqy --no-install-recommends \
+  alsa-utils \
+  ardour \
   audacity \
+  cecilia \
+  csoundqt \
   faust \
   faustworks \
+  ffmpeg \
   fluidsynth \
   fluid-soundfont-gm \
   fluid-soundfont-gs \
   freepats \
   liblo-dev \
   liblo-tools \
+  libghc-tidal-dev \
+  libghc-tidal-doc \
+  mikmod \
   musescore-general-soundfont-lossless \
   musescore3 \
   nyquist \
@@ -65,6 +73,7 @@ echo "Installing other tools"
   sonic-pi-samples  \
   sonic-pi-server  \
   sonic-pi-server-doc \
+  soundscaperenderer \
   stk \
   stk-doc \
   supercollider \
