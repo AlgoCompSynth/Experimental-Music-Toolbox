@@ -22,52 +22,52 @@ read -p "Press 'Enter' to continue:"
 sudo apt-get install -qqy --no-install-recommends jackd2
 
 echo ""
-echo ""
-echo "Setting non-interactive mode"
-export DEBIAN_FRONTEND=noninteractive
-
-echo ""
-echo "Installing multimedia-tasks"
-/usr/bin/time sudo apt-get install -qqy --no-install-recommends \
-  multimedia-tasks \
-  >> $LOGFILE 2>&1
-
-echo "...ambisonics"
-/usr/bin/time sudo apt-get install -qqy multimedia-ambisonics > Logs/ambisonics.log 2>&1
-
-echo "...csound"
-/usr/bin/time sudo apt-get install -qqy multimedia-csound > Logs/csound.log 2>&1
-
-echo "...puredata"
-/usr/bin/time sudo apt-get install -qqy multimedia-puredata > Logs/puredata.log 2>&1
-
-echo "...supercollider"
-/usr/bin/time sudo apt-get install -qqy multimedia-supercollider > Logs/supercollider.log 2>&1
-
-echo ""
-echo "Installing other tools"
+echo "Installing music packages"
 /usr/bin/time sudo apt-get install -qqy --no-install-recommends \
   alsa-utils \
+  amb-plugins \
   ardour \
   audacity \
   cecilia \
+  csound \
+  csound-doc \
+  csound-plugins \
+  csound-soundfont \
+  csound-utils \
   csoundqt \
+  csoundqt-examples \
   faust \
   faustworks \
   ffmpeg \
-  fluidsynth \
   fluid-soundfont-gm \
   fluid-soundfont-gs \
+  fluidsynth \
   freepats \
+  gem \
+  iannix \
+  libambix-dev \
+  libambix-doc \
+  libambix-utils \
   liblo-dev \
   liblo-tools \
-  libghc-tidal-dev \
-  libghc-tidal-doc \
+  lua-luacsnd6 \
   mikmod \
   musescore-general-soundfont-lossless \
   musescore3 \
-  nyquist \
+  pd-iem \
   polyphone \
+  puredata \
+  puredata-dev \
+  puredata-doc \
+  puredata-extra \
+  puredata-gui \
+  puredata-import \
+  puredata-utils \
+  puredata64 \
+  python3-csound \
+  sc3-plugins \
+  sc3-plugins-language \
+  sc3-plugins-server \
   sf3convert \
   sonic-pi \
   sonic-pi-samples  \
@@ -77,6 +77,12 @@ echo "Installing other tools"
   stk \
   stk-doc \
   supercollider \
+  supercollider \
+  supercollider-ide \
+  supercollider-language \
+  supercollider-server \
+  supercollider-supernova \
+  supercollider-vim \
   swami \
   >> $LOGFILE 2>&1
 
