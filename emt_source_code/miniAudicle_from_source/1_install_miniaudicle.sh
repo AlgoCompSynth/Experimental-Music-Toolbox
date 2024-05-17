@@ -2,6 +2,8 @@
 
 set -e
 
+echo "Setting Qt version"
+export QT_SELECT=qt6
 echo "Setting ChucK version"
 export CHUCK_VERSION="chuck-1.5.2.4"
 
@@ -26,21 +28,17 @@ sudo apt-get update -qq
   libsndfile1-dev \
   >> $LOGFILE 2>&1
 
-echo ""
-echo "Defining 'qmake' with a symlink"
-ln -sf /usr/bin/qmake6 $HOME/.local/bin/qmake
-echo ""
-
 echo "Cloning repository"
 rm -fr miniAudicle
 /usr/bin/time git clone --recurse-submodules --branch $CHUCK_VERSION \
-  https://github.com/ccrma/miniAudicle.git
+  https://github.com/ccrma/miniAudicle.git \
   >> $LOGFILE 2>&1
 
 echo "Building miniAudicle for pulseaudio"
-export QT_SELECT=qt6
+export PATH=$PATH:/usr/lib/qt6/bin
+echo `qmake --version`
 pushd miniAudicle/src
-/usr/bin/time make linux-pulse
+/usr/bin/time make linux-pulse \
   >> $LOGFILE 2>&1
 echo "Installing miniAudicle"
 sudo make install
