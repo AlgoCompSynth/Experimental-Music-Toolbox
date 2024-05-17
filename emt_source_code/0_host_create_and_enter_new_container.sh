@@ -23,7 +23,7 @@ echo "COMPUTE_MODE: $COMPUTE_MODE"
 
 echo ""
 echo "Setting environment variables"
-export DBX_CONTAINER_IMAGE="quay.io/toolbx-images/ubuntu-toolbox:22.04"
+export DBX_CONTAINER_IMAGE="docker.io/library/ubuntu:24.04"
 export DBX_CONTAINER_NAME="EMT-$COMPUTE_MODE"
 export DBX_CONTAINER_HOME_PREFIX="$HOME/dbx-homes"
 export DBX_CONTAINER_DIRECTORY="$DBX_CONTAINER_HOME_PREFIX/$DBX_CONTAINER_NAME"
@@ -50,7 +50,7 @@ then
     --pull \
     --home $DBX_CONTAINER_DIRECTORY \
     --additional-packages "systemd libpam-systemd" \
-    --additional-packages "apt-file file git-lfs lsb-release pciutils plocate software-properties-common time tree vim-nox" \
+    --additional-packages "apt-file file git-lfs lsb-release lynx pciutils plocate software-properties-common time tree vim-nox" \
     --additional-packages "fftw-dev fftw-docs libfftw3-bin libfftw3-dev libfftw3-doc libfftw3-mpi-dev libopenblas64-pthread-dev" \
     --init
 else
@@ -61,7 +61,7 @@ else
     --pull \
     --home $DBX_CONTAINER_DIRECTORY \
     --additional-packages "systemd libpam-systemd" \
-    --additional-packages "apt-file file git-lfs lsb-release pciutils plocate software-properties-common time tree vim-nox" \
+    --additional-packages "apt-file file git-lfs lsb-release lynx pciutils plocate software-properties-common time tree vim-nox" \
     --additional-packages "fftw-dev fftw-docs libfftw3-bin libfftw3-dev libfftw3-doc libfftw3-mpi-dev libopenblas64-pthread-dev" \
     --init
 fi
@@ -72,5 +72,4 @@ echo "export COMPUTE_MODE=$COMPUTE_MODE" > ./set_compute_mode.sh
 echo "'source' this file in scripts that need to know COMPUTE_MODE"
 echo ""
 echo "Entering $DBX_CONTAINER_NAME"
-echo "Installing the basic packages will take some time"
 distrobox enter "$DBX_CONTAINER_NAME"
