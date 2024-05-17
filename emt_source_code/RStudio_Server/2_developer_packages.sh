@@ -17,7 +17,7 @@ echo "Installing Linux dependencies"
   libxml2-dev \
   > Logs/2_developer_packages.log 2>&1
 
-echo "Installing developer R packages - this takes some time"
+echo "Installing R developer packages - this takes some time"
 /usr/bin/time ./developer_packages.R >> Logs/2_developer_packages.log 2>&1
 
 echo "Finished"

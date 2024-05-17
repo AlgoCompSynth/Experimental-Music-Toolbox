@@ -12,10 +12,10 @@ CODENAME=`lsb_release -cs | grep -v "No LSB modules"`
 echo ""
 echo "Running on $DISTRIBUTOR $CODENAME"
 
-if [ "$CODENAME" != "jammy" ]
+if [ "$CODENAME" != "noble" ]
 then
 
-  echo "..exit -1024 Only Ubuntu 'jammy' is currently supported"
+  echo "..exit -1024 Only Ubuntu 'noble' is currently supported"
   exit -1024
 
 fi
