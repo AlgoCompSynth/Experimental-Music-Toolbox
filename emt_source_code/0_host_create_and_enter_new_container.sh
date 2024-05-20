@@ -23,7 +23,7 @@ echo "COMPUTE_MODE: $COMPUTE_MODE"
 
 echo ""
 echo "Setting environment variables"
-export DBX_CONTAINER_IMAGE="docker.io/library/ubuntu:24.04"
+export DBX_CONTAINER_IMAGE="ghcr.io/ublue-os/ubuntu-toolbox:latest"
 export DBX_CONTAINER_NAME="EMT-$COMPUTE_MODE"
 export DBX_CONTAINER_HOME_PREFIX="$HOME/dbx-homes"
 export DBX_CONTAINER_DIRECTORY="$DBX_CONTAINER_HOME_PREFIX/$DBX_CONTAINER_NAME"
