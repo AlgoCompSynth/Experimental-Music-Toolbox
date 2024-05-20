@@ -58,10 +58,6 @@ echo "Setting R profile $HOME/.Rprofile"
 cp Rprofile $HOME/.Rprofile
 echo ""
 
-echo "Stopping and disabling rstudio-server"
-echo "You can ignore error messages"
-sudo systemctl disable --now rstudio-server || true
-
 echo ""
 echo "Installing RStudio Server"
 pushd /tmp
@@ -80,6 +76,12 @@ wget --quiet https://github.com/quarto-dev/quarto-cli/releases/download/v$QUARTO
 /usr/bin/time sudo dpkg -i quarto-$QUARTO_VERSION-linux-amd64.deb \
   >> $LOGFILE 2>&1
 popd
+
+echo "Reconfiguring RStudio Server"
+./reconfigure_RStudio_Server.sh
+
+echo "Adding $USER to the 'systemd-journal' group"
+sudo usermod -a -G systemd-journal $USER
 
 echo ""
 echo ""

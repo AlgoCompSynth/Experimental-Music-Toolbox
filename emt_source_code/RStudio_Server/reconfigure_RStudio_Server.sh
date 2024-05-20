@@ -20,6 +20,9 @@ echo ""
 sudo mkdir --parents /etc/rstudio
 sudo cp rserver.conf /etc/rstudio/
 
+echo "Installing logging configuration file 'logging.conf'"
+sudo cp logging.conf /etc/rstudio/
+
 echo "Enabling / starting RStudio Server"
 sudo systemctl enable --now rstudio-server.service 
 
