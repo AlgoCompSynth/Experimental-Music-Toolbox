@@ -17,6 +17,7 @@ sudo apt-get update -qq
 /usr/bin/time sudo apt-get upgrade -qqy \
   >> $LOGFILE 2>&1
 /usr/bin/time sudo apt-get install -qqy --no-install-recommends \
+  alsa-utils \
   bison \
   build-essential \
   flex \
@@ -25,23 +26,46 @@ sudo apt-get update -qq
   libpulse-dev \
   libqscintilla2-qt6-dev \
   qt6-base-dev \
+  qt6-wayland-dev \
   libsndfile1-dev \
   >> $LOGFILE 2>&1
+export PATH=/usr/lib/qt6/bin:$PATH
 
 echo "Cloning repository"
+pushd /tmp
 rm -fr miniAudicle
 /usr/bin/time git clone --recurse-submodules --branch $CHUCK_VERSION \
   https://github.com/ccrma/miniAudicle.git \
   >> $LOGFILE 2>&1
 
-echo "Building miniAudicle for pulseaudio"
-export PATH=$PATH:/usr/lib/qt6/bin
-echo `qmake --version`
+echo ""
+echo "Building ChucK"
+pushd miniAudicle/src/chuck/src
+/usr/bin/time make linux-pulse \
+  >> $LOGFILE 2>&1
+sudo make install /
+  >> $LOGFILE 2>&1
+popd
+
+echo ""
+echo "Building ChuGins"
+pushd miniAudicle/src/chugins
+/usr/bin/time make linux \
+  >> $LOGFILE 2>&1
+sudo make install /
+  >> $LOGFILE 2>&1
+popd
+
+echo ""
+echo "Building miniAudicle"
 pushd miniAudicle/src
 /usr/bin/time make linux-pulse \
   >> $LOGFILE 2>&1
 echo "Installing miniAudicle"
-sudo make install
+sudo make install /
+  >> $LOGFILE 2>&1
+popd
+
 popd
 
 echo "Finished"
