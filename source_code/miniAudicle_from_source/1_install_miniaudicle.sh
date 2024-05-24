@@ -43,7 +43,9 @@ echo "Building ChucK"
 pushd miniAudicle/src/chuck/src
 /usr/bin/time make linux-pulse \
   >> $LOGFILE 2>&1
-sudo make install /
+echo ""
+echo "Installing ChucK"
+sudo make install \
   >> $LOGFILE 2>&1
 popd
 
@@ -52,7 +54,9 @@ echo "Building ChuGins"
 pushd miniAudicle/src/chugins
 /usr/bin/time make linux \
   >> $LOGFILE 2>&1
-sudo make install /
+echo ""
+echo "Installing ChuGins"
+sudo make install \
   >> $LOGFILE 2>&1
 popd
 
@@ -61,8 +65,9 @@ echo "Building miniAudicle"
 pushd miniAudicle/src
 /usr/bin/time make linux-pulse \
   >> $LOGFILE 2>&1
+echo ""
 echo "Installing miniAudicle"
-sudo make install /
+sudo make install \
   >> $LOGFILE 2>&1
 popd
 
