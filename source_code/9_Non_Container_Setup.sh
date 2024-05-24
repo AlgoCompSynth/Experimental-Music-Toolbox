@@ -28,6 +28,7 @@ sudo apt-get upgrade -qqy
 echo "Installing base packages"
 sudo apt-get install -qqy --no-install-recommends \
   apt-file \
+  build-essential \
   fftw-dev \
   fftw-docs \
   file \
@@ -36,6 +37,7 @@ sudo apt-get install -qqy --no-install-recommends \
   libfftw3-dev \
   libfftw3-doc \
   libfftw3-mpi-dev \
+  libopenblas-pthread-dev \
   libopenblas64-pthread-dev \
   lsb-release \
   pciutils \
