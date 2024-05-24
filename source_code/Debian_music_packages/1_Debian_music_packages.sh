@@ -52,6 +52,7 @@ echo "Installing additional packages"
   liblo-tools \
   musescore-general-soundfont-lossless \
   musescore3 \
+  nyquist \
   polyphone \
   python3-csound \
   sf3convert \
