@@ -3,7 +3,6 @@
 set -e
 
 export LOGFILE=Logs/2_conda_env.log
-rm -f $LOGFILE
 
 echo "Getting COMPUTE_MODE"
 source ../set_compute_mode.sh

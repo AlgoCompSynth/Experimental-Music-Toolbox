@@ -2,8 +2,9 @@
 
 set -e
 
-echo "Clearing Logs"
-rm -f Logs/*
+echo "Defining LOGFILE"
+mkdir --parents Logs
+touch Logs/.gitkeep
 export LOGFILE=$PWD/Logs/1_RStudio_Server.log
 
 DISTRIBUTOR=`lsb_release -is | grep -v "No LSB modules"`
