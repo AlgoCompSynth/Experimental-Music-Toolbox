@@ -15,7 +15,7 @@ sudo apt-get upgrade -qqy
   libsox-fmt-all \
   libsoxr-dev \
   sox \
-  >> $LOGFILE
+  >> $LOGFILE 2>&1
 
 echo "Getting COMPUTE_MODE"
 source ../set_compute_mode.sh
