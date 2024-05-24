@@ -9,7 +9,6 @@ dependencies:
   - cudnn
   - cutensor
   - cupy
-  - ffmpeg
   - jupyter_server
   - jupyterlab
   - matplotlib

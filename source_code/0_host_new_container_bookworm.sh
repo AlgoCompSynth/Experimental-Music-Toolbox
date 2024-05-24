@@ -24,10 +24,10 @@ echo "COMPUTE_MODE: $COMPUTE_MODE"
 echo ""
 echo "Setting environment variables"
 export DBX_CONTAINER_IMAGE="quay.io/toolbx-images/debian-toolbox:12"
-export DBX_CONTAINER_NAME="EMT-$COMPUTE_MODE"
+export DBX_CONTAINER_NAME="Bookworm-EMT-$COMPUTE_MODE"
 export DBX_CONTAINER_HOME_PREFIX="$HOME/dbx-homes"
 export DBX_CONTAINER_DIRECTORY="$DBX_CONTAINER_HOME_PREFIX/$DBX_CONTAINER_NAME"
-export DBX_CONTAINER_HOSTNAME="EMT-$COMPUTE_MODE"
+export DBX_CONTAINER_HOSTNAME="Bookworm-EMT-$COMPUTE_MODE"
 
 echo ""
 echo "Removing any existing distrobox container $DBX_CONTAINER_NAME"
@@ -50,7 +50,7 @@ then
     --pull \
     --home $DBX_CONTAINER_DIRECTORY \
     --additional-packages "systemd libpam-systemd" \
-    --additional-packages "apt-file file git-lfs lsb-release lynx pciutils plocate software-properties-common time tree vim-nox" \
+    --additional-packages "apt-file file git-lfs lsb-release lynx pciutils plocate software-properties-common time tree vim-nox zsh" \
     --additional-packages "fftw-dev fftw-docs libfftw3-bin libfftw3-dev libfftw3-doc libfftw3-mpi-dev libopenblas64-pthread-dev" \
     --init
 else
@@ -61,7 +61,7 @@ else
     --pull \
     --home $DBX_CONTAINER_DIRECTORY \
     --additional-packages "systemd libpam-systemd" \
-    --additional-packages "apt-file file git-lfs lsb-release lynx pciutils plocate software-properties-common time tree vim-nox" \
+    --additional-packages "apt-file file git-lfs lsb-release lynx pciutils plocate software-properties-common time tree vim-nox zsh" \
     --additional-packages "fftw-dev fftw-docs libfftw3-bin libfftw3-dev libfftw3-doc libfftw3-mpi-dev libopenblas64-pthread-dev" \
     --init
 fi

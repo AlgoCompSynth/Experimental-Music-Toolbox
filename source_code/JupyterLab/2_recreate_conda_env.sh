@@ -2,7 +2,20 @@
 
 set -e
 
-export LOGFILE=Logs/2_conda_env.log
+export LOGFILE=Logs/2_recreate_conda_env.log
+
+echo "Installing Linux dependencies"
+sudo apt-get update -qq
+sudo apt-get upgrade -qqy
+/usr/bin/time sudo apt-get install -qqy --no-install-recommends \
+  ffmpeg \
+  ffmpeg-doc \
+  libffmpeg-nvenc-dev \
+  libsox-dev \
+  libsox-fmt-all \
+  libsoxr-dev \
+  sox \
+  >> $LOGFILE
 
 echo "Getting COMPUTE_MODE"
 source ../set_compute_mode.sh
@@ -12,7 +25,7 @@ echo "Activating 'conda' commands"
 source $HOME/mambaforge/etc/profile.d/conda.sh
 
 echo ""
-echo "Creating new 'JupyterLab' virtual environment"
+echo "Recreating 'JupyterLab' virtual environment"
 /usr/bin/time conda env create --quiet --yes --file conda-env-$COMPUTE_MODE.yml \
   >> $LOGFILE 2>&1
 

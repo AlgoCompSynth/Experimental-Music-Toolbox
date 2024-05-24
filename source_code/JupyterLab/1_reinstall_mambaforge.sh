@@ -5,7 +5,7 @@ set -e
 echo "Defining LOGFILE"
 mkdir --parents Logs
 touch Logs/.gitkeep
-export LOGFILE=$PWD/Logs/1_install_mambaforge.log
+export LOGFILE=$PWD/Logs/1_reinstall_mambaforge.log
 
 echo "Creating a new Mambaforge installation"
 
