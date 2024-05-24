@@ -5,7 +5,7 @@ set -e
 echo "Defining LOGFILE"
 mkdir --parents Logs
 touch Logs/.gitkeep
-export LOGFILE=Logs/1_linux_music_packages.log
+export LOGFILE=Logs/1_ubuntu_music_packages.log
 
 echo ""
 echo ""
