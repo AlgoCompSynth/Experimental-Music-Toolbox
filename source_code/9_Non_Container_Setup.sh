@@ -34,15 +34,18 @@ sudo apt-get install -qqy --no-install-recommends \
   fftw-docs \
   file \
   git-lfs \
+  gpg-agent \
   libfftw3-bin \
   libfftw3-dev \
   libfftw3-doc \
   libfftw3-mpi-dev \
   libopenblas-pthread-dev \
   libopenblas64-pthread-dev \
+  libpam-systemd \
   lsb-release \
   pciutils \
   software-properties-common \
+  systemd \
   time \
   tree \
   vim-nox
