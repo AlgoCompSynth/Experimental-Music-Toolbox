@@ -7,57 +7,27 @@ mkdir --parents Logs
 touch Logs/.gitkeep
 export LOGFILE=$PWD/Logs/1_RStudio_Server.log
 
-DISTRIBUTOR=`lsb_release -is | grep -v "No LSB modules"`
-CODENAME=`lsb_release -cs | grep -v "No LSB modules"`
+echo "Adding CRAN repository"
+# https://cran.rstudio.com/bin/linux/ubuntu/
 
-echo ""
-echo "Running on $DISTRIBUTOR $CODENAME"
-
-if [ "$CODENAME" == "noble" ]
-then
-
-  echo "Adding CRAN repository"
-  # https://cran.rstudio.com/bin/linux/ubuntu/
-
-  # update indices
-  sudo apt update -qq
-  # install two helper packages we need
-  sudo apt install -qqy --no-install-recommends software-properties-common dirmngr \
-    >> $LOGFILE 2>&1
-  # add the signing key (by Michael Rutter) for these repos
-  # To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
-  # Fingerprint: E298A3A825C0D65DFD57CBB651716619E084DAB9
-  wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc \
-    | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
-  # add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
-  sudo add-apt-repository --yes \
-    "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" \
-    >> $LOGFILE 2>&1
-
-elif [ "$CODENAME" == "bookworm" ]
-then
-
-  echo "Adding CRAN repository"
-  # https://cran.rstudio.com/bin/linux/debian/#secure-apt
-
-  gpg --keyserver keyserver.ubuntu.com \
-    --recv-key '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7'
-  gpg --armor --export '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7' | \
-    sudo tee /etc/apt/trusted.gpg.d/cran_debian_key.asc
-  sudo cp bookworm.list /etc/apt/sources.list.d/
-
-else
-  echo "Unsupported distribution - exiting"
-  exit
-fi
+# add the signing key (by Michael Rutter) for these repos
+# To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+# Fingerprint: E298A3A825C0D65DFD57CBB651716619E084DAB9
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc \
+  | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+# add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
+sudo add-apt-repository --yes \
+  "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" \
+  >> $LOGFILE 2>&1
 
 echo ""
 echo "Installing R and gdebi-core"
 # https://posit.co/download/rstudio-server/
-sudo apt-get update -qq
-/usr/bin/time sudo apt-get upgrade -qqy \
+/usr/bin/time sudo apt-get update \
   >> $LOGFILE 2>&1
-/usr/bin/time sudo apt-get install -qqy --no-install-recommends \
+/usr/bin/time sudo apt-get upgrade --yes \
+  >> $LOGFILE 2>&1
+/usr/bin/time sudo apt-get install --yes \
   gdebi-core \
   r-base \
   r-base-dev \

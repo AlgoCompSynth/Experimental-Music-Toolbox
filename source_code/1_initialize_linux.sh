@@ -2,6 +2,9 @@
 
 set -e
 
+echo "Restoring missing documentation"
+./unminimize.sh
+
 ./upgrades.sh
 
 echo "Creating $HOME/.local/bin and $HOME/bin"

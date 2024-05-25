@@ -14,9 +14,9 @@ export LOGFILE=$PWD/Logs/1_install_miniaudicle.log
 
 echo "Installing build dependencies"
 sudo apt-get update -qq
-/usr/bin/time sudo apt-get upgrade -qqy \
+/usr/bin/time sudo apt-get upgrade --yes \
   >> $LOGFILE 2>&1
-/usr/bin/time sudo apt-get install -qqy --no-install-recommends \
+/usr/bin/time sudo apt-get install --yes \
   alsa-utils \
   bison \
   build-essential \

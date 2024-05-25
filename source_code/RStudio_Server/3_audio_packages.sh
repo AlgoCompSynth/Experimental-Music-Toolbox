@@ -3,7 +3,7 @@
 set -e
 
 echo "Installing Linux dependencies"
-/usr/bin/time sudo apt-get install -qqy --no-install-recommends \
+/usr/bin/time sudo apt-get install --yes \
   cmake \
   flac \
   ffmpeg \
@@ -20,7 +20,7 @@ echo "Installing Linux dependencies"
   libsoxr-dev  \
   mp3splt \
   sox \
-  > Logs/3_audio_packages.log 2>&1
+  >> Logs/3_audio_packages.log 2>&1
 
 echo "Installing R audio packages - this takes some time"
 /usr/bin/time ./audio_packages.R >> Logs/3_audio_packages.log 2>&1

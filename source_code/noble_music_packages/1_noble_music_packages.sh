@@ -5,7 +5,7 @@ set -e
 echo "Defining LOGFILE"
 mkdir --parents Logs
 touch Logs/.gitkeep
-export LOGFILE=Logs/1_Bookworm_music_packages.log
+export LOGFILE=Logs/1_noble_music_packages.log
 
 echo ""
 echo ""
@@ -20,45 +20,43 @@ echo "    sudo dpkg-reconfigure jackd2"
 echo ""
 read -p "Press 'Enter' to continue:"
 
-sudo apt-get install -qqy --no-install-recommends jackd2
+sudo apt-get install -qqy jackd2
 
 echo ""
 echo "Installing multimedia tasks"
-/usr/bin/time sudo apt-get install -qqy \
+/usr/bin/time sudo apt-get install --yes \
   multimedia-tasks \
   >> $LOGFILE 2>&1
-/usr/bin/time sudo apt-get install -qqy \
+/usr/bin/time sudo apt-get install --yes \
   multimedia-ambisonics \
   multimedia-csound \
   multimedia-puredata \
   multimedia-supercollider \
   >> $LOGFILE 2>&1
 
-echo ""
-echo "Installing additional packages"
-/usr/bin/time sudo apt-get install -qqy --no-install-recommends \
-  audacity \
+echo "Installing additional audio packages"
+/usr/bin/time sudo apt-get install --yes \
   faust \
-  faustworks \
+  ffmpeg \
+  flac \
   fluid-soundfont-gm \
   fluid-soundfont-gs \
   fluidsynth \
   freepats \
   iannix \
-  libambix-dev \
-  libambix-doc \
-  libambix-utils \
   liblo-dev \
   liblo-tools \
-  musescore-general-soundfont-lossless \
-  musescore3 \
+  libsox-dev \
+  libsox-fmt-all \
+  libsoxr-dev \
+  mp3splt \
   nyquist \
   polyphone \
   python3-csound \
   sf3convert \
+  sox \
   stk \
   stk-doc \
-  swami \
   >> $LOGFILE 2>&1
 
 echo "Finished"
