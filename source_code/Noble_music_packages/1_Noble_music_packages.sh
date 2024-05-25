@@ -87,4 +87,10 @@ echo "Installing music packages"
   swami \
   >> $LOGFILE 2>&1
 
+echo ""
+echo "Installing 'pd-*'"
+/usr/bin/time sudo apt-get install -qqy --no-install-recommends \
+  "pd-*" \
+  >> $LOGFILE 2>&1
+
 echo "Finished"
