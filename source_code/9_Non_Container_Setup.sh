@@ -29,6 +29,7 @@ echo "Installing base packages"
 sudo apt-get install -qqy --no-install-recommends \
   apt-file \
   build-essential \
+  dirmngr \
   fftw-dev \
   fftw-docs \
   file \
