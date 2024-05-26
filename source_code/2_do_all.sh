@@ -3,9 +3,9 @@
 set -e
 
 for option in \
-  noble_music_packages
-  miniAudicle_from_source
-  RStudio_Server
+  noble_music_packages \
+  miniAudicle_from_source \
+  RStudio_Server \
   JupyterLab
 do
   echo ""
