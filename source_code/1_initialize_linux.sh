@@ -2,7 +2,8 @@
 
 set -e
 
-export KERNEL_RELEASE=`uname --kernel_release`
+export KERNEL_RELEASE=`uname --kernel-release`
+echo ""
 echo "KERNEL_RELEASE: $KERNEL_RELEASE"
 
 if [[ ! "$KERNEL_RELEASE" =~ "WSL2" ]]
@@ -10,8 +11,10 @@ then
   # not on WSL - we need to unminimize
   echo "Restoring missing documentation"
   ./unminimize.sh
+  echo ""
 fi
 
+echo ""
 ./upgrades.sh
 
 echo "Creating $HOME/.local/bin and $HOME/bin"
