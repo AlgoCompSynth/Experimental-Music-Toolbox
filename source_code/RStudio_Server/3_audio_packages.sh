@@ -2,6 +2,9 @@
 
 set -e
 
+echo "Defining LOGFILE"
+export LOGFILE=$PWD/Logs/3_audio_packages.log
+
 echo "Installing Linux dependencies"
 /usr/bin/time sudo apt-get install --yes \
   cmake \
@@ -20,9 +23,10 @@ echo "Installing Linux dependencies"
   libsoxr-dev  \
   mp3splt \
   sox \
-  >> Logs/3_audio_packages.log 2>&1
+  >> $LOGFILE 2>&1
 
 echo "Installing R audio packages - this takes some time"
-/usr/bin/time ./audio_packages.R >> Logs/3_audio_packages.log 2>&1
+/usr/bin/time ./audio_packages.R \
+  >> $LOGFILE 2>&1
 
 echo "Finished"

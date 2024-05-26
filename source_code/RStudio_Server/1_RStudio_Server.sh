@@ -3,8 +3,6 @@
 set -e
 
 echo "Defining LOGFILE"
-mkdir --parents Logs
-touch Logs/.gitkeep
 export LOGFILE=$PWD/Logs/1_RStudio_Server.log
 
 echo "Adding CRAN repository"

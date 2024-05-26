@@ -3,8 +3,6 @@
 set -e
 
 echo "Defining LOGFILE"
-mkdir --parents Logs
-touch Logs/.gitkeep
 export LOGFILE=Logs/1_noble_music_packages.log
 
 echo ""

@@ -8,8 +8,6 @@ echo "Setting ChucK version"
 export CHUCK_VERSION="chuck-1.5.2.4"
 
 echo "Defining LOGFILE"
-mkdir --parents Logs
-touch Logs/.gitkeep
 export LOGFILE=$PWD/Logs/1_install_miniaudicle.log
 
 echo "Installing build dependencies"

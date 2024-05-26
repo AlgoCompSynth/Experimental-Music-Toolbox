@@ -2,7 +2,8 @@
 
 set -e
 
-export LOGFILE=Logs/2_recreate_conda_env.log
+echo "Defining LOGFILE"
+export LOGFILE=$PWD/Logs/2_recreate_conda_env.log
 
 echo "Installing Linux dependencies"
 /usr/bin/time sudo apt-get update \
