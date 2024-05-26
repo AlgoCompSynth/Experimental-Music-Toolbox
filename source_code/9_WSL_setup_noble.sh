@@ -25,6 +25,7 @@ echo "Upgrading"
 sudo apt-get update -qq
 sudo apt-get upgrade -qqy
 
+# duplicate of what's added to a base image
 echo "Installing base packages"
 sudo apt-get install -qqy --no-install-recommends \
   apt-file \
@@ -43,12 +44,25 @@ sudo apt-get install -qqy --no-install-recommends \
   libopenblas64-pthread-dev \
   libpam-systemd \
   lsb-release \
+  lynx \
   pciutils \
+  plocate \
   software-properties-common \
   systemd \
   time \
   tree \
-  vim-nox
+  vim-nox \
+  zsh
+
+echo "Installing flatpak"
+sudo apt-get install -qqy --no-install-recommends \
+  flatpak
+echo "Adding flathub remote"
+sudo flatpak remote-add --if-not-exists \
+  flathub \
+  https://dl.flathub.org/repo/flathub.flatpakrepo
+echo "Testing flathub remote"
+sudo flatpak search Audacity
 
 echo ""
 echo "Creating file './set_compute_mode.sh'"
