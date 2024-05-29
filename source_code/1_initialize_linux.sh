@@ -2,14 +2,10 @@
 
 set -e
 
-export KERNEL_RELEASE=`uname --kernel-release`
-echo ""
-echo "KERNEL_RELEASE: $KERNEL_RELEASE"
-
-if [[ ! "$KERNEL_RELEASE" =~ "WSL2" ]]
+if [ -x "/usr/bin/distrobox-export" ]
 then
   # not on WSL - we need to unminimize
-  echo "Restoring missing documentation"
+  echo "Running in a Distrobox container - restoring missing documentation"
   ./unminimize.sh
   echo ""
 fi
