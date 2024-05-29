@@ -5,6 +5,15 @@ set -e
 echo "Defining LOGFILE"
 export LOGFILE=$PWD/Logs/2_recreate_conda_env.log
 
+echo ""
+echo "Enabling 'conda'"
+export MAMBAFORGE_HOME=$HOME/mambaforge
+source $MAMBAFORGE_HOME/etc/profile.d/conda.sh
+echo "Activating 'base'"
+conda activate base
+echo "PATH: $PATH" \
+  >> $LOGFILE 2>&1
+
 echo "Installing Linux dependencies"
 /usr/bin/time sudo apt-get update \
   >> $LOGFILE 2>&1
@@ -23,9 +32,6 @@ echo "Installing Linux dependencies"
 echo "Getting COMPUTE_MODE"
 source ../set_compute_mode.sh
 echo "COMPUTE_MODE: $COMPUTE_MODE"
-
-echo "Activating 'conda' commands"
-source $HOME/mambaforge/etc/profile.d/conda.sh
 
 echo ""
 echo "Recreating 'JupyterLab' virtual environment"
