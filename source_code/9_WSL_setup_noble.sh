@@ -54,16 +54,6 @@ sudo apt-get install -qqy --no-install-recommends \
   vim-nox \
   zsh
 
-echo "Installing flatpak"
-sudo apt-get install -qqy --no-install-recommends \
-  flatpak
-echo "Adding flathub remote"
-sudo flatpak remote-add --if-not-exists \
-  flathub \
-  https://dl.flathub.org/repo/flathub.flatpakrepo
-echo "Testing flathub remote"
-sudo flatpak search Audacity
-
 echo ""
 echo "Creating file './set_compute_mode.sh'"
 echo "export COMPUTE_MODE=$COMPUTE_MODE" > ./set_compute_mode.sh
