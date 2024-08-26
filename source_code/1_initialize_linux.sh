@@ -10,6 +10,21 @@ then
   echo ""
 fi
 
+echo "Cloning powerlevel10k"
+rm -fr $HOME/powerlevel10k*
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k-media.git $HOME/powerlevel10k-media
+
+echo "Downloading patched MesloLG Nerd fonts"
+mkdir --parents $HOME/.fonts
+pushd $HOME/.fonts
+cp $HOME/powerlevel10k-media/*.ttf .
+popd
+
+echo "Setting configuration files"
+cp zshrc $HOME/.zshrc
+cp p10k.zsh $HOME/.p10k.zsh
+
 echo ""
 ./upgrades.sh
 
