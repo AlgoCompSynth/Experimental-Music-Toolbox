@@ -3,7 +3,7 @@
 set -e
 
 echo "Defining LOGFILE"
-export LOGFILE=Logs/1_apt_music_packages.log
+export LOGFILE=Logs/1_noble_music_packages.log
 
 echo ""
 echo ""
