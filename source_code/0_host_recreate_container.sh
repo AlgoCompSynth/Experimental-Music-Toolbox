@@ -24,10 +24,10 @@ echo "COMPUTE_MODE: $COMPUTE_MODE"
 echo ""
 echo "Setting environment variables"
 export DBX_CONTAINER_IMAGE="docker.io/library/ubuntu:24.04"
-export DBX_CONTAINER_NAME="Noble-EMT-$COMPUTE_MODE"
+export DBX_CONTAINER_NAME="ExpMusTools-$COMPUTE_MODE"
 export DBX_CONTAINER_HOME_PREFIX="$HOME/dbx-homes"
 export DBX_CONTAINER_DIRECTORY="$DBX_CONTAINER_HOME_PREFIX/$DBX_CONTAINER_NAME"
-export DBX_CONTAINER_HOSTNAME="Noble-EMT-$COMPUTE_MODE"
+export DBX_CONTAINER_HOSTNAME=$DBX_CONTAINER_NAME
 
 echo ""
 echo "Removing any existing distrobox container $DBX_CONTAINER_NAME"

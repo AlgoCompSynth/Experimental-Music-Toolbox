@@ -3,7 +3,7 @@
 set -e
 
 echo "Activating JupyterLab environment"
-source $HOME/mambaforge/etc/profile.d/conda.sh
+source $HOME/miniforge3/etc/profile.d/conda.sh
 conda activate JupyterLab
 
 echo "Generating Jupyter configuration file"

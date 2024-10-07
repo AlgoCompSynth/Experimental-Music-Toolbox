@@ -7,7 +7,7 @@ export LOGFILE=$PWD/Logs/2_recreate_conda_env.log
 
 echo ""
 echo "Enabling 'conda'"
-export MAMBAFORGE_HOME=$HOME/mambaforge
+export MAMBAFORGE_HOME=$HOME/miniforge3
 source $MAMBAFORGE_HOME/etc/profile.d/conda.sh
 echo "Activating 'base'"
 conda activate base
