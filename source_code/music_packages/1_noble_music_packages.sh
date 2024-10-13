@@ -28,7 +28,6 @@ echo "Installing multimedia tasks"
 /usr/bin/time sudo apt-get install --yes \
   multimedia-ambisonics \
   multimedia-csound \
-  multimedia-puredata \
   multimedia-supercollider \
   >> $LOGFILE 2>&1
 
