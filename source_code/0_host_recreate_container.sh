@@ -49,9 +49,7 @@ then
     --hostname $DBX_CONTAINER_HOSTNAME \
     --pull \
     --home $DBX_CONTAINER_DIRECTORY \
-    --additional-packages "systemd libpam-systemd" \
-    --additional-packages "apt-file dirmngr file git-lfs lsb-release lynx pciutils plocate software-properties-common time tmux tree vim-nox zsh" \
-    --additional-packages "fftw-dev fftw-docs libfftw3-bin libfftw3-dev libfftw3-doc libfftw3-mpi-dev libopenblas64-pthread-dev" \
+    --additional-packages "systemd libpam-systemd software-properties-common time unminimize vim" \
     --init
 else
   distrobox create \
@@ -60,9 +58,7 @@ else
     --hostname $DBX_CONTAINER_HOSTNAME \
     --pull \
     --home $DBX_CONTAINER_DIRECTORY \
-    --additional-packages "systemd libpam-systemd" \
-    --additional-packages "apt-file dirmngr file git-lfs lsb-release lynx pciutils plocate software-properties-common time tmux tree vim-nox zsh" \
-    --additional-packages "fftw-dev fftw-docs libfftw3-bin libfftw3-dev libfftw3-doc libfftw3-mpi-dev libopenblas64-pthread-dev" \
+    --additional-packages "systemd libpam-systemd software-properties-common time unminimize vim" \
     --init
 fi
   
@@ -72,4 +68,9 @@ echo "export COMPUTE_MODE=$COMPUTE_MODE" > ./set_compute_mode.sh
 echo "'source' this file in scripts that need to know COMPUTE_MODE"
 echo ""
 echo "Entering $DBX_CONTAINER_NAME"
+echo "You do *not* have to type the above command!"
+echo "This will take some time."
+echo "It is downloading and installing basic packages."
+echo ""
+echo ""
 distrobox enter "$DBX_CONTAINER_NAME"
