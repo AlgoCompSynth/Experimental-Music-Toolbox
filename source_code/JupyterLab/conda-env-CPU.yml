@@ -1,7 +1,6 @@
 name: JupyterLab
 channels:
   - pytorch
-  - numba
   - conda-forge
 dependencies:
   - python
