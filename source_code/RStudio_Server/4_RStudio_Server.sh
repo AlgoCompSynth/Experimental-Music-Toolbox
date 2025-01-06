@@ -17,8 +17,6 @@ echo "Installing RStudio Server"
 pushd /tmp
 rm -f *.deb
 
-# https://posit.co/download/rstudio-server/
-export RSTUDIO_SERVER_PACKAGE="rstudio-server-2024.09.1-394-amd64.deb"
 wget --quiet https://download2.rstudio.org/server/jammy/amd64/$RSTUDIO_SERVER_PACKAGE
 /usr/bin/time sudo gdebi -n -q $RSTUDIO_SERVER_PACKAGE \
   >> $LOGFILE 2>&1

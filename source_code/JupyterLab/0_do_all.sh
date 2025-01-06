@@ -5,6 +5,7 @@ set -e
 mkdir --parents Logs
 rm -f Logs/*
 touch Logs/.gitkeep
+source ../set_envars
 
 for script in \
   1_reinstall_miniforge3.sh \

@@ -4,8 +4,6 @@ set -e
 
 echo "Setting Qt version"
 export QT_SELECT=qt6
-echo "Setting ChucK version"
-export CHUCK_VERSION="main"
 
 echo "Defining LOGFILE"
 export LOGFILE=$PWD/Logs/1_install_miniaudicle.log

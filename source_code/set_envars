@@ -1,0 +1,13 @@
+export CHUCK_VERSION="main"
+echo "CHUCK_VERSION: $CHUCK_VERSION"
+export PD_L2ORK_VERSION="20241224"
+echo "PD_L2ORK_VERSION: $PD_L2ORK_VERSION"
+#export PD_L2ORK_JOBS="1"
+export PD_L2ORK_JOBS=`nproc`
+echo "PD_L2ORK_JOBS: $PD_L2ORK_JOBS"
+export QUARTO_VERSION=1.6.40
+echo "QUARTO_VERSION: $QUARTO_VERSION"
+
+# https://posit.co/download/rstudio-server/
+export RSTUDIO_SERVER_PACKAGE="rstudio-server-2024.12.0-467-amd64.deb"
+echo "RSTUDIO_SERVER_PACKAGE: $RSTUDIO_SERVER_PACKAGE"
