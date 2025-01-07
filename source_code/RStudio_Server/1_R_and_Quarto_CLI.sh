@@ -25,6 +25,7 @@ echo "Installing R"
 /usr/bin/time sudo apt-get upgrade --yes \
   >> $LOGFILE 2>&1
 /usr/bin/time sudo apt-get install --yes \
+  qpdf \
   r-base \
   r-base-dev \
   >> $LOGFILE 2>&1
