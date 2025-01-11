@@ -21,14 +21,9 @@ read -p "Press 'Enter' to continue:"
 sudo apt-get install -qqy jackd2
 
 echo ""
-echo "Installing multimedia tasks"
+echo "Installing Ubuntu Studio audio"
 /usr/bin/time sudo apt-get install --yes \
-  multimedia-tasks \
-  >> $LOGFILE 2>&1
-/usr/bin/time sudo apt-get install --yes \
-  multimedia-ambisonics \
-  multimedia-csound \
-  multimedia-supercollider \
+  ubuntustudio-audio \
   >> $LOGFILE 2>&1
 
 echo "Installing additional audio packages"
@@ -51,9 +46,11 @@ echo "Installing additional audio packages"
   polyphone \
   python3-csound \
   sf3convert \
+  sonic-pi \
   sox \
   stk \
   stk-doc \
+  supercollider \
   >> $LOGFILE 2>&1
 
 echo "Finished"

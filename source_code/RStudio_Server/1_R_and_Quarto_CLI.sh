@@ -25,6 +25,7 @@ echo "Installing R"
 /usr/bin/time sudo apt-get upgrade --yes \
   >> $LOGFILE 2>&1
 /usr/bin/time sudo apt-get install --yes \
+  qpdf \
   r-base \
   r-base-dev \
   >> $LOGFILE 2>&1
@@ -39,11 +40,10 @@ echo ""
 
 echo ""
 echo "Installing Quarto CLI"
-export QUARTO_VERSION=1.6.33
 pushd /tmp
 rm -f *.deb
-wget --quiet https://github.com/quarto-dev/quarto-cli/releases/download/v$QUARTO_VERSION/quarto-$QUARTO_VERSION-linux-amd64.deb
-/usr/bin/time sudo dpkg -i quarto-$QUARTO_VERSION-linux-amd64.deb \
+wget --quiet https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb
+/usr/bin/time sudo dpkg -i quarto-${QUARTO_VERSION}-linux-amd64.deb \
   >> $LOGFILE 2>&1
 popd
 
