@@ -68,7 +68,7 @@ echo "export COMPUTE_MODE=$COMPUTE_MODE" > ./set_compute_mode.sh
 echo "'source' this file in scripts that need to know COMPUTE_MODE"
 echo ""
 echo "Entering $DBX_CONTAINER_NAME"
-echo "You do *not* have to type the above command!"
+echo "You do *not* have to type the above 'distrobox enter' command!"
 echo "This will take some time."
 echo "It is downloading and installing basic packages."
 echo ""
