@@ -4,16 +4,6 @@ set -e
 
 export DEBIAN_FRONTEND=noninteractive
 
-./add_git_ppa.sh
-
-if [ -x "/usr/bin/distrobox-export" ]
-then
-  # not on WSL - we need to unminimize
-  echo "Running in a Distrobox container - restoring missing documentation"
-  ./unminimize.sh
-  echo ""
-fi
-
 echo "Defining LOGFILE"
 export LOGFILE=$PWD/1_global_installs.log
 rm --force $LOGFILE

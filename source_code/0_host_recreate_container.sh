@@ -23,7 +23,7 @@ echo "COMPUTE_MODE: $COMPUTE_MODE"
 
 echo ""
 echo "Setting environment variables"
-export DBX_CONTAINER_IMAGE="docker.io/library/ubuntu:24.04"
+export DBX_CONTAINER_IMAGE="quay.io/toolbx-images/debian-toolbox:12"
 export DBX_CONTAINER_NAME="ExpMusTools-$COMPUTE_MODE"
 export DBX_CONTAINER_HOME_PREFIX="$HOME/dbx-homes"
 export DBX_CONTAINER_DIRECTORY="$DBX_CONTAINER_HOME_PREFIX/$DBX_CONTAINER_NAME"
@@ -49,7 +49,7 @@ then
     --hostname $DBX_CONTAINER_HOSTNAME \
     --pull \
     --home $DBX_CONTAINER_DIRECTORY \
-    --additional-packages "systemd libpam-systemd software-properties-common time unminimize vim" \
+    --additional-packages "systemd libpam-systemd software-properties-common time vim" \
     --init
 else
   distrobox create \
@@ -58,7 +58,7 @@ else
     --hostname $DBX_CONTAINER_HOSTNAME \
     --pull \
     --home $DBX_CONTAINER_DIRECTORY \
-    --additional-packages "systemd libpam-systemd software-properties-common time unminimize vim" \
+    --additional-packages "systemd libpam-systemd software-properties-common time vim" \
     --init
 fi
   
