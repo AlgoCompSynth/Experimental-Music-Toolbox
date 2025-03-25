@@ -21,9 +21,14 @@ read -p "Press 'Enter' to continue:"
 sudo apt-get install -qqy jackd2
 
 echo ""
-echo "Installing Ubuntu Studio audio"
+echo "Installing base multimedia tasks"
 /usr/bin/time sudo apt-get install --yes \
-  ubuntustudio-audio \
+  multimedia-ambisonics \
+  multimedia-csound \
+  multimedia-jack \
+  multimedia-puredata \
+  multimedia-supercollider \
+  multimedia-tasks \
   >> $LOGFILE 2>&1
 
 echo "Installing additional audio packages"
@@ -36,6 +41,9 @@ echo "Installing additional audio packages"
   fluidsynth \
   freepats \
   iannix \
+  libavfilter-dev \
+  libfftw3-dev \
+  libfftw3-doc \
   liblo-dev \
   liblo-tools \
   libsox-dev \
@@ -43,6 +51,7 @@ echo "Installing additional audio packages"
   libsoxr-dev \
   mp3splt \
   nyquist \
+  pipewire \
   polyphone \
   python3-csound \
   sf3convert \
@@ -51,6 +60,7 @@ echo "Installing additional audio packages"
   stk \
   stk-doc \
   supercollider \
+  timidity \
   >> $LOGFILE 2>&1
 
 echo "Finished"
