@@ -2,6 +2,7 @@
 
 set -e
 
+source ../set_envars
 echo "Defining LOGFILE"
 export LOGFILE=$PWD/Logs/1_R_and_Quarto_CLI.log
 
