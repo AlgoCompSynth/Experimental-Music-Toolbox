@@ -8,7 +8,7 @@ touch Logs/.gitkeep
 source ../set_envars
 
 for script in \
-  1_noble_music_packages.sh
+  1_linux_music_packages.sh
 do
   ./$script
 done

@@ -3,7 +3,7 @@
 set -e
 
 for option in \
-  music_packages \
+  linux_music_packages \
   miniAudicle_from_source \
   RStudio_Server \
   JupyterLab \
