@@ -7,7 +7,8 @@ for option in \
   miniAudicle_from_source \
   RStudio_Server \
   JupyterLab \
-  pd_l2ork
+  pd_l2ork \
+  vcvrack_dev
 do
   echo ""
   echo "$option:"
