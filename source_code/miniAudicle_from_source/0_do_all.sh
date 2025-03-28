@@ -2,6 +2,7 @@
 
 set -e
 
+source ../set_envars
 echo "Setting Qt version"
 export QT_SELECT=qt6
 
