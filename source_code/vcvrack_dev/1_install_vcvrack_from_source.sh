@@ -31,10 +31,13 @@ sudo apt-get update -qq
 
 mkdir --parents $HOME/Projects
 pushd $HOME/Projects
-  echo "Cloning repository"
-  rm -fr Rack
+  echo "Cloning repositories"
+  rm --force --recursive Rack VCVBook
   /usr/bin/time git clone \
     git@github.com:AlgoCompSynth/Rack.git \
+    >> $LOGFILE 2>&1
+  /usr/bin/time git clone \
+    git@github.com:AlgoCompSynth/VCVBook.git \
     >> $LOGFILE 2>&1
 
   pushd Rack
