@@ -41,7 +41,7 @@ pushd $HOME/Projects
     >> $LOGFILE 2>&1
 
   pushd Rack
-    echo "Fetching submodules"
+    echo "Fetching Rack submodules"
     /usr/bin/time git submodule update --init --recursive \
       >> $LOGFILE 2>&1
 
@@ -53,6 +53,14 @@ pushd $HOME/Projects
     /usr/bin/time make --jobs=`nproc` \
       >> $LOGFILE 2>&1
 
+  popd
+
+  echo "Building ABC plugin"
+  cp -rp VCVBook/ABC Rack/plugins
+
+  pushd Rack/plugins/ABC
+    /usr/bin/time make --jobs=`nproc` \
+      >> $LOGFILE 2>&1
   popd
 
 popd
