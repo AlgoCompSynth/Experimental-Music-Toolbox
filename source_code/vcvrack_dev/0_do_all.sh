@@ -34,10 +34,10 @@ pushd $HOME/Projects
   echo "Cloning repositories"
   rm --force --recursive Rack VCVBook
   /usr/bin/time git clone \
-    git@github.com:AlgoCompSynth/Rack.git \
+    https://github.com/VCVRack/Rack.git \
     >> $LOGFILE 2>&1
   /usr/bin/time git clone \
-    git@github.com:AlgoCompSynth/VCVBook.git \
+    https://github.com/LOGUNIVPM/VCVBook.git \
     >> $LOGFILE 2>&1
 
   pushd Rack
