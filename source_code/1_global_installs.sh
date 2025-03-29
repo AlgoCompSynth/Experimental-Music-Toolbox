@@ -8,8 +8,10 @@ echo "Defining LOGFILE"
 export LOGFILE=$PWD/1_global_installs.log
 rm --force $LOGFILE
 
-echo "Adding $USER to the 'audio' group"
+echo "Adding $USER to the 'audio' and 'jackuser' groups"
 sudo usermod -aG audio $USER
+sudo addgroup --system jackuser
+sudo usermod -aG jackuser $USER
 
 echo ""
 echo ""
