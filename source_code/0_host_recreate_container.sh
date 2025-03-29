@@ -23,7 +23,7 @@ echo "COMPUTE_MODE: $COMPUTE_MODE"
 
 echo ""
 echo "Setting environment variables"
-export DBX_CONTAINER_IMAGE="quay.io/toolbx-images/debian-toolbox:testing"
+export DBX_CONTAINER_IMAGE="docker.io/library/debian:testing-backports"
 export DBX_CONTAINER_NAME="ExpMusTools-$COMPUTE_MODE"
 export DBX_CONTAINER_HOME_PREFIX="$HOME/dbx-homes"
 export DBX_CONTAINER_DIRECTORY="$DBX_CONTAINER_HOME_PREFIX/$DBX_CONTAINER_NAME"
