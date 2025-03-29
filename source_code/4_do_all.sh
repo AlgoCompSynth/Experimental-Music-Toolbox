@@ -3,10 +3,10 @@
 set -e
 
 for option in \
+  RStudio_Server \
   JupyterLab \
   linux_music_packages \
   miniAudicle_from_source \
-  RStudio_Server \
   pd_l2ork \
   vcvrack_dev
 do
