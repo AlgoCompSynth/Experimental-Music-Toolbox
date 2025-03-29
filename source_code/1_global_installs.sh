@@ -52,6 +52,7 @@ echo "Installing base packages"
   lynx \
   mp3splt \
   pciutils \
+  pforth \
   pipewire \
   plocate \
   polyphone \
