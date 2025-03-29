@@ -30,27 +30,40 @@ sudo apt-get install -qqy jackd2
 
 echo "Installing base packages"
 /usr/bin/time sudo apt-get install --assume-yes \
+  alsa-tools \
+  alsa-utils \
   apt-file \
   build-essential \
   dirmngr \
-  fftw-dev \
-  fftw-docs \
+  ffmpeg \
   file \
+  flac \
+  fluid-soundfont-gm \
+  fluid-soundfont-gs \
+  fluidsynth \
+  freepats \
   git-lfs \
   gpg-agent \
+  libasound2-plugins \
   libcanberra-gtk3-module \
-  libfftw3-bin \
-  libfftw3-dev \
-  libfftw3-doc \
-  libfftw3-mpi-dev \
-  libopenblas-pthread-dev \
-  libopenblas64-pthread-dev \
+  libsox-fmt-all \
+  libsoxr0 \
   lsb-release \
   lynx \
+  mp3splt \
   pciutils \
+  pipewire \
   plocate \
+  polyphone \
+  pulseaudio \
+  pulseaudio-utils \
   qjackctl \
+  sf3convert \
+  sndfile-tools \
+  sox \
+  timidity \
   tree \
+  wireplumber-doc \
   >> $LOGFILE 2>&1
 
 echo "Finished"
