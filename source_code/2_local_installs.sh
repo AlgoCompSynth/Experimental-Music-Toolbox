@@ -11,6 +11,9 @@ cp bashrc $HOME/.bashrc; source bashrc
 cp bash_aliases $HOME/.bash_aliases; source bash_aliases
 cp vimrc $HOME/.vimrc
 
+echo "Copying host .ssh"
+cp -rp ../../../.ssh $HOME/
+
 echo "Installing Meslo nerd fonts"
 pushd /tmp
 
