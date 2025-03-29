@@ -39,6 +39,11 @@ conda activate base
 echo "Setting default threads to number of processors"
 conda config --set default_threads `nproc`
 
+echo "Setting HTTP parameters"
+conda config --set remote_connect_timeout_secs 30.0
+conda config --set remote_max_retries 10
+conda config --set remote_read_timeout_secs 180
+
 echo "Updating base packages"
 conda update --name base --all --yes --quiet \
   >> $LOGFILE 2>&1
