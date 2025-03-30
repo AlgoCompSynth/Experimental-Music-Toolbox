@@ -86,7 +86,7 @@ pushd /tmp
   echo "Building Pd-L2Ork"
 
   pushd pd-l2ork
-    /usr/bin/time make --jobs=`nproc` all \
+    /usr/bin/time make all \
       >> $LOGFILE 2>&1
     echo ""
     echo "Installing Pd-L2Ork"
