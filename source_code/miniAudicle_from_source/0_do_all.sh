@@ -7,7 +7,7 @@ echo "Setting Qt version"
 export QT_SELECT=qt6
 
 echo "Defining LOGFILE"
-export LOGFILE=$PWD/Logs/1_install_miniaudicle.log
+export LOGFILE=$PWD/Logs/install_miniaudicle.log
 
 echo "Installing build dependencies"
 sudo apt-get update -qq

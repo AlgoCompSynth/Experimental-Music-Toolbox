@@ -4,7 +4,7 @@ set -e
 
 echo "Defining LOGFILE"
 mkdir --parents $PWD/Logs
-export LOGFILE=$PWD/Logs/1_install_vcvrack_from_source.log
+export LOGFILE=$PWD/Logs/install_vcvrack_from_source.log
 rm --force $LOGFILE
 
 echo "Installing build dependencies"

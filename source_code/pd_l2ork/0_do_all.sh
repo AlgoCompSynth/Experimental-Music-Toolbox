@@ -3,7 +3,7 @@
 set -e
 
 echo "Defining LOGFILE"
-export LOGFILE=$PWD/Logs/1_install_pd_l2ork_from_source.log
+export LOGFILE=$PWD/Logs/install_pd_l2ork_from_source.log
 
 echo "Installing build dependencies"
 sudo apt-get update -qq
