@@ -23,6 +23,7 @@ sudo apt-get update -qq
   libpulse-dev \
   libqscintilla2-qt6-dev \
   qt6-base-dev \
+  qt6-wayland \
   qt6-wayland-dev \
   libsndfile1-dev \
   >> $LOGFILE 2>&1
