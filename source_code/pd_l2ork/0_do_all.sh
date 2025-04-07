@@ -3,10 +3,13 @@
 set -e
 
 echo "Defining LOGFILE"
+mkdir --parents $PWD/Logs
 export LOGFILE=$PWD/Logs/install_pd_l2ork_from_source.log
+rm --force $LOGFILE
 
 echo "Installing build dependencies"
-sudo apt-get update -qq
+sudo apt-get update -qq \
+  >> $LOGFILE 2>&1
 /usr/bin/time sudo apt-get upgrade --yes \
   >> $LOGFILE 2>&1
 /usr/bin/time sudo apt-get install --yes \
@@ -76,24 +79,24 @@ sudo apt-get update -qq
 
 echo "Cloning repository"
 
-pushd /tmp
+mkdir --parents $HOME/Projects
+pushd $HOME/Projects
   rm -fr pd-l2ork
   /usr/bin/time git clone \
     https://github.com/pd-l2ork/pd-l2ork.git \
     >> $LOGFILE 2>&1
+popd
 
+pushd $HOME/Projects/pd-l2ork
   echo ""
   echo "Building Pd-L2Ork"
 
-  pushd pd-l2ork
-    /usr/bin/time make all \
-      >> $LOGFILE 2>&1
-    echo ""
-    echo "Installing Pd-L2Ork"
-    sudo make install \
-      >> $LOGFILE 2>&1
-  popd
-
+  /usr/bin/time make --jobs=`nproc` all \
+    >> $LOGFILE 2>&1
+  echo ""
+  echo "Installing Pd-L2Ork"
+  sudo make install \
+    >> $LOGFILE 2>&1
 popd
 
 echo "Finished"
