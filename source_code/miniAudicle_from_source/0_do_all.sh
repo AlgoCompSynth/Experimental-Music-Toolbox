@@ -7,10 +7,13 @@ echo "Setting Qt version"
 export QT_SELECT=qt6
 
 echo "Defining LOGFILE"
+mkdir --parents $PWD/Logs
 export LOGFILE=$PWD/Logs/install_miniaudicle.log
+rm --force $LOGFILE
 
 echo "Installing build dependencies"
-sudo apt-get update -qq
+sudo apt-get update -qq \
+  >> $LOGFILE 2>&1
 /usr/bin/time sudo apt-get upgrade --yes \
   >> $LOGFILE 2>&1
 /usr/bin/time sudo apt-get install --yes \
@@ -29,46 +32,53 @@ sudo apt-get update -qq
   >> $LOGFILE 2>&1
 export PATH=/usr/lib/qt6/bin:$PATH
 
-echo "Cloning repository"
-pushd /tmp
-rm -fr miniAudicle
-/usr/bin/time git clone --recurse-submodules --branch $CHUCK_VERSION \
-  https://github.com/ccrma/miniAudicle.git \
-  >> $LOGFILE 2>&1
-
-echo ""
-echo "Building ChucK"
-pushd miniAudicle/src/chuck/src
-/usr/bin/time make linux-pulse \
-  >> $LOGFILE 2>&1
-echo ""
-echo "Installing ChucK"
-sudo make install \
-  >> $LOGFILE 2>&1
+mkdir --parents $HOME/Projects
+pushd $HOME/Projects
+  echo ""
+  echo "Cloning repository"
+  rm -fr miniAudicle
+  /usr/bin/time git clone --recurse-submodules \
+    https://github.com/ccrma/miniAudicle.git \
+    >> $LOGFILE 2>&1
 popd
 
-echo ""
-echo "Building ChuGins"
-pushd miniAudicle/src/chugins
-/usr/bin/time make linux \
-  >> $LOGFILE 2>&1
-echo ""
-echo "Installing ChuGins"
-sudo make install \
-  >> $LOGFILE 2>&1
+pushd $HOME/Projects/miniAudicle/src/chuck/src
+  echo ""
+  echo "Building ChucK"
+  git checkout $CHUCK_VERSION \
+    >> $LOGFILE 2>&1
+  /usr/bin/time make --jobs=`nproc` linux-all \
+    >> $LOGFILE 2>&1
+  echo ""
+  echo "Installing ChucK"
+  sudo make install \
+    >> $LOGFILE 2>&1
 popd
 
-echo ""
-echo "Building miniAudicle"
-pushd miniAudicle/src
-/usr/bin/time make linux-pulse \
-  >> $LOGFILE 2>&1
-echo ""
-echo "Installing miniAudicle"
-sudo make install \
-  >> $LOGFILE 2>&1
+pushd $HOME/Projects/miniAudicle/src/chugins
+  echo ""
+  echo "Building ChuGins"
+  git checkout $CHUCK_VERSION \
+    >> $LOGFILE 2>&1
+  /usr/bin/time make --jobs=`nproc` linux \
+    >> $LOGFILE 2>&1
+  echo ""
+  echo "Installing ChuGins"
+  sudo make install \
+    >> $LOGFILE 2>&1
 popd
 
+pushd $HOME/Projects/miniAudicle/src
+  echo ""
+  echo "Building miniAudicle"
+  git checkout $CHUCK_VERSION \
+    >> $LOGFILE 2>&1
+  /usr/bin/time make --jobs=`nproc` linux-all \
+    >> $LOGFILE 2>&1
+  echo ""
+  echo "Installing miniAudicle"
+  sudo make install \
+    >> $LOGFILE 2>&1
 popd
 
 echo "Finished"

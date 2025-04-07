@@ -1,4 +1,4 @@
-export CHUCK_VERSION="main"
+export CHUCK_VERSION="chuck-1.5.5.0"
 echo "CHUCK_VERSION: $CHUCK_VERSION"
 
 export PD_L2ORK_VERSION="20241224-rev.fcf040ce"
