@@ -49,7 +49,7 @@ then
     --hostname $DBX_CONTAINER_HOSTNAME \
     --pull \
     --home $DBX_CONTAINER_DIRECTORY \
-    --additional-packages "systemd libpam-systemd time vim" \
+    --additional-packages "systemd libpam-systemd git time vim" \
     --init
 else
   distrobox create \
@@ -58,7 +58,7 @@ else
     --hostname $DBX_CONTAINER_HOSTNAME \
     --pull \
     --home $DBX_CONTAINER_DIRECTORY \
-    --additional-packages "systemd libpam-systemd time vim" \
+    --additional-packages "systemd libpam-systemd git time vim" \
     --init
 fi
   
