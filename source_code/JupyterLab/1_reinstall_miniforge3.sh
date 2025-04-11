@@ -40,9 +40,9 @@ echo "Setting default threads to number of processors"
 conda config --set default_threads `nproc`
 
 echo "Setting HTTP parameters"
-conda config --set remote_connect_timeout_secs 30.0
-conda config --set remote_max_retries 10
-conda config --set remote_read_timeout_secs 180
+conda config --set remote_connect_timeout_secs 60.0
+conda config --set remote_max_retries 20
+conda config --set remote_read_timeout_secs 300
 
 echo "Updating base packages"
 conda update --name base --all --yes --quiet \
