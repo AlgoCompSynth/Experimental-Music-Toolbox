@@ -7,7 +7,6 @@ for option in \
   JupyterLab \
   linux_music_packages \
   miniAudicle_from_source \
-  pd_l2ork \
   vcvrack_dev
 do
   echo ""
